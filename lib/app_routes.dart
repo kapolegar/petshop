@@ -11,6 +11,7 @@ import 'package:petshop/screens/myaccount.dart';
 import 'package:petshop/screens/product_details.dart';
 import 'package:petshop/screens/home_products_page.dart';
 import 'package:petshop/providers/selected_screen_provider.dart';
+import 'package:petshop/components/my_account_components/create_new_account.dart';
 
 class AppRouter {
   static final router = GoRouter(
@@ -101,6 +102,22 @@ class AppRouter {
                   : '';
 
           return Login(fromScreen: fromScreen, orderID: orderID);
+        },
+      ),
+      GoRoute(
+        path: '/criar-conta',
+        name: 'criar-conta',
+        builder: (context, state) {
+          final fromScreen =
+              state.extra != null && state.extra is Map
+                  ? (state.extra as Map)['fromScreen'] as Type
+                  : Object;
+          final orderID =
+              state.extra != null && state.extra is Map
+                  ? (state.extra as Map)['orderID'] as String
+                  : '';
+
+          return CreateNewAccount(fromScreen: fromScreen, orderID: orderID);
         },
       ),
       GoRoute(

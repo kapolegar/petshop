@@ -1,0 +1,46 @@
+[
+    {
+        "id": "0",
+        "nome": "Mia",
+        "idTutor": "0",
+        "especie": "Gato",
+        "raca": "SRD",
+        "idade": "4",
+        "porte": "Pequeno",
+        "pelagem": "Branca e laranja",
+        "imagem": "images/pets/mia.png"
+    },
+    {
+        "id": "1",
+        "nome": "Pepper",
+        "idTutor": "0",
+        "especie": "Gato",
+        "raca": "SRD",
+        "idade": "4",
+        "porte": "Pequeno",
+        "pelagem": "Branca e laranja",
+        "imagem": "images/pets/pepper.png"
+    },
+    {
+        "id": "2",
+        "nome": "Anya",
+        "idTutor": "0",
+        "especie": "",
+        "raca": "SRD",
+        "idade": "4",
+        "porte": "Médio",
+        "pelagem": "Cinza mescla",
+        "imagem": "images/pets/anya.png"
+    },
+    {
+        "id": "3",
+        "nome": "Gigi",
+        "idTutor": "0",
+        "especie": "Gato",
+        "raca": "SRD",
+        "idade": "3",
+        "porte": "Médio",
+        "pelagem": "Cinza mescla",
+        "imagem": "images/pets/gigi.png"
+    }
+]

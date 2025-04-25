@@ -6,7 +6,6 @@ import 'package:petshop/models/order.dart';
 import 'package:petshop/models/pets_infos.dart';
 import 'package:petshop/models/credit_card.dart';
 import 'package:petshop/models/logged_user_infos.dart';
-import 'package:petshop/providers/selected_screen_provider.dart';
 
 class MyAccount extends ChangeNotifier {
   String _loginValidation = '';
@@ -43,11 +42,7 @@ class MyAccount extends ChangeNotifier {
     notifyListeners();
   }
 
-  void validateLogin(
-    String email,
-    String senha,
-    SelectScreen selectedScreen,
-  ) async {
+  String validateLogin(String email, String senha) {
     _loginValidation = '';
     try {
       if (email.isEmpty && senha.isEmpty) {
@@ -78,6 +73,24 @@ class MyAccount extends ChangeNotifier {
       _loginValidation =
           'Usuário não encontrado. Faça o cadastro no site e tente novamente.';
     }
+    notifyListeners();
+    return loginValidation;
+  }
+
+  logOff() {
+    _loggedUserInfos = null;
+    notifyListeners();
+  }
+
+  void createAccount(String email, String senha) async {
+    _loginValidation = '';
+
+    _loggedUserInfos = LoggedUserInfos(
+      id: 0,
+      nome: email.split('@')[0],
+      email: email,
+      token: 'new-token1256974351**&%',
+    );
     notifyListeners();
   }
 

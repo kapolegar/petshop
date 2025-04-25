@@ -103,7 +103,10 @@ class _AppBarPetShopState extends State<AppBarPetShop> {
                             elevation: 0,
                             child: Container(
                               width: width,
-                              height: height,
+                              height:
+                                  myAccountProvider.loggedUserInfos != null
+                                      ? height + screenSize.height * 0.04
+                                      : height,
                               padding: EdgeInsets.all(
                                 screenSize.height * 0.025,
                               ),
@@ -161,6 +164,49 @@ class _AppBarPetShopState extends State<AppBarPetShop> {
                                       ),
                                     ),
                                   ),
+                                  SizedBox(height: screenSize.height * 0.015),
+                                  ElevatedButton(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Icons.logout,
+                                          color: const Color.fromRGBO(
+                                            227,
+                                            28,
+                                            70,
+                                            1,
+                                          ),
+                                          size: screenSize.height * 0.035,
+                                        ),
+                                        SizedBox(
+                                          width: screenSize.width * 0.005,
+                                        ),
+                                        Text(
+                                          'Sair',
+                                          style: TextStyle(
+                                            fontFamily: 'NunitoSansBold',
+                                            fontSize: screenSize.height * 0.018,
+                                            letterSpacing:
+                                                screenSize.width * 0.0001,
+                                            fontWeight: FontWeight.bold,
+                                            height: screenSize.height * 0.003,
+                                            color: const Color.fromARGB(
+                                              255,
+                                              227,
+                                              28,
+                                              71,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    onPressed: () {
+                                      myAccountProvider.logOff();
+                                      context.goNamed('home');
+                                    },
+                                  ),
                                 ],
                               ),
                             ),
@@ -215,7 +261,7 @@ class _AppBarPetShopState extends State<AppBarPetShop> {
                                         'login',
                                         extra: {
                                           'fromScreen': AppBarPetShop,
-                                          'orderID': '12345',
+                                          'orderID': '',
                                         },
                                       );
                                     },
@@ -279,9 +325,13 @@ class _AppBarPetShopState extends State<AppBarPetShop> {
                                       ),
                                       TextButton(
                                         onPressed: () {
-                                          _removeAccountMenu;
-                                          selectedScreen.changeScreen(
-                                            const CreateNewAccount(),
+                                          _removeAccountMenu();
+                                          context.goNamed(
+                                            'criar-conta',
+                                            extra: {
+                                              'fromScreen': AppBarPetShop,
+                                              'orderID': '',
+                                            },
                                           );
                                         },
                                         style: ButtonStyle(

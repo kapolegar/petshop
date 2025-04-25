@@ -1,9 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:petshop/components/appbar_components/appbar.dart';
+import 'package:petshop/providers/my_account_provider.dart';
+import 'package:petshop/providers/order_history_provider.dart';
+import 'package:petshop/screens/buy_cart.dart';
+import 'package:petshop/screens/login.dart';
+import 'package:petshop/screens/services.dart';
 import 'package:provider/provider.dart';
 import '../../providers/selected_screen_provider.dart';
 
 class CreateNewAccount extends StatefulWidget {
-  const CreateNewAccount({super.key});
+  final Type fromScreen;
+  final String orderID;
+  const CreateNewAccount({
+    required this.orderID,
+    required this.fromScreen,
+    super.key,
+  });
 
   @override
   State<CreateNewAccount> createState() => _CreateNewAccountState();
@@ -50,7 +63,7 @@ class _CreateNewAccountState extends State<CreateNewAccount> {
         _caracterCountValidator == const Color.fromARGB(255, 21, 202, 163);
   }
 
-  void _createAccount() {
+  void _validateFields(MyAccount myAccountProvider) {
     setState(() {
       _emailError = '';
       _pwdError = '';
@@ -73,6 +86,34 @@ class _CreateNewAccountState extends State<CreateNewAccount> {
       setState(() {
         _pwdError = 'A senha não atende a todos os requisitos.';
       });
+    }
+
+    if (_emailError == '' && _pwdError == '' && _confirmPwdError == '') {
+      _createAccount(myAccountProvider);
+    }
+  }
+
+  _createAccount(MyAccount myAccountProvider) {
+    myAccountProvider.createAccount(
+      _emailControler.text,
+      _confirmPwdControler.text,
+    );
+    print(widget.orderID);
+    print(widget.fromScreen);
+
+    final Map<Type, void Function()> toScreen = {
+      BuyCart:
+          () => context.goNamed(
+            'pagamento',
+            pathParameters: {'orderID': widget.orderID},
+          ),
+      ServicesPage: () => context.goNamed('servicos'),
+    };
+
+    if (widget.fromScreen == AppBarPetShop) {
+      context.goNamed('minha-conta');
+    } else {
+      toScreen[widget.fromScreen]?.call();
     }
   }
 
@@ -147,403 +188,417 @@ class _CreateNewAccountState extends State<CreateNewAccount> {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     bool isButtonEnabled = true;
+    MyAccount myAccountProvider = Provider.of<MyAccount>(
+      context,
+      listen: false,
+    );
 
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        SizedBox(
-          height: screenSize.height * 0.2,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(width: screenSize.width * 0.06),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Padding(
-                      padding: EdgeInsets.only(right: screenSize.width * 0.015),
-                      child: Image.asset(
-                        'assets/images/petshop_logo.png',
-                        width: screenSize.width * 0.08,
-                        height: screenSize.height * 0.12,
+    return Material(
+      color: Colors.white,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: screenSize.height * 0.2,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(width: screenSize.width * 0.06),
+                    ElevatedButton(
+                      onPressed: () {
+                        context.goNamed('home');
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                          right: screenSize.width * 0.015,
+                        ),
+                        child: Image.asset(
+                          'assets/images/petshop_logo.png',
+                          width: screenSize.width * 0.08,
+                          height: screenSize.height * 0.12,
+                        ),
                       ),
                     ),
+                    Text(
+                      'FOFINHOS PETSHOP',
+                      style: Theme.of(context).textTheme.displayLarge,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Text(
+            'Criar nova conta',
+            style: TextStyle(
+              fontFamily: 'NunitoSansBold',
+              fontSize: screenSize.height * 0.032,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+          SizedBox(height: screenSize.height * 0.03),
+          Text(
+            'Complete os campos com as suas informações',
+            style: TextStyle(
+              fontFamily: 'NunitoSans',
+              fontSize: screenSize.height * 0.022,
+              fontWeight: FontWeight.bold,
+              color: const Color.fromARGB(150, 0, 0, 0),
+            ),
+          ),
+          SizedBox(height: screenSize.height * 0.04),
+          Container(
+            width: screenSize.width * 0.4,
+            height: screenSize.height * 0.06,
+            decoration: BoxDecoration(
+              border: Border.all(color: _emailBorderColor, width: 0.75),
+              borderRadius: BorderRadius.circular(screenSize.height * 0.015),
+            ),
+            child: TextFormField(
+              controller: _emailControler,
+              style: TextStyle(
+                fontFamily: 'NunitoSans',
+                fontSize: screenSize.height * 0.02,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromARGB(190, 0, 0, 0),
+              ),
+              focusNode: _focusNodeEmail,
+              decoration: InputDecoration(
+                labelText: 'E-mail',
+                labelStyle: TextStyle(
+                  fontFamily: 'NunitoSans',
+                  backgroundColor: Colors.white,
+                  fontSize: screenSize.height * 0.02,
+                  fontWeight: FontWeight.bold,
+                  color: const Color.fromARGB(175, 0, 0, 0),
+                ),
+                floatingLabelBehavior: FloatingLabelBehavior.auto,
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                ),
+                focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                ),
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: screenSize.width * 0.01,
+                  vertical: screenSize.height * 0.01,
+                ),
+              ),
+            ),
+          ),
+          Container(
+            height: screenSize.height * 0.03,
+            width: screenSize.width * 0.38,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              _emailError,
+              style: TextStyle(
+                fontFamily: 'NunitoSansBold',
+                fontSize: screenSize.height * 0.016,
+                fontWeight: FontWeight.bold,
+                letterSpacing: screenSize.width * 0.0001,
+                color: const Color.fromRGBO(227, 28, 70, 1),
+              ),
+            ),
+          ),
+          SizedBox(height: screenSize.height * 0.02),
+          Container(
+            width: screenSize.width * 0.4,
+            height: screenSize.height * 0.06,
+            decoration: BoxDecoration(
+              border: Border.all(color: _pwdBorderColor, width: 0.75),
+              borderRadius: BorderRadius.circular(screenSize.height * 0.015),
+            ),
+            child: TextFormField(
+              controller: _pwdControler,
+              style: TextStyle(
+                fontFamily: 'NunitoSans',
+                fontSize: screenSize.height * 0.02,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromARGB(190, 0, 0, 0),
+              ),
+              obscureText: _obscureTextPwd,
+              focusNode: _focusNodePwd,
+              decoration: InputDecoration(
+                suffixIcon: Padding(
+                  padding: EdgeInsets.only(right: screenSize.width * 0.005),
+                  child: IconButton(
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    splashColor: Colors.transparent,
+                    icon: Icon(
+                      _obscureTextPwd ? Icons.visibility_off : Icons.visibility,
+                      color: const Color.fromARGB(175, 0, 0, 0),
+                    ),
+                    onPressed: () => _togglePasswordVisibility(false),
                   ),
-                  Text(
-                    'FOFINHOS PETSHOP',
-                    style: Theme.of(context).textTheme.displayLarge,
+                ),
+                labelText: 'Senha',
+                labelStyle: TextStyle(
+                  fontFamily: 'NunitoSans',
+                  backgroundColor: Colors.white,
+                  fontSize: screenSize.height * 0.02,
+                  fontWeight: FontWeight.bold,
+                  color: const Color.fromARGB(175, 0, 0, 0),
+                ),
+                floatingLabelBehavior: FloatingLabelBehavior.auto,
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                ),
+                focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                ),
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: screenSize.width * 0.01,
+                  vertical: screenSize.height * 0.01,
+                ),
+              ),
+            ),
+          ),
+          Container(
+            height: screenSize.height * 0.03,
+            width: screenSize.width * 0.38,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              _pwdError,
+              style: TextStyle(
+                fontFamily: 'NunitoSansBold',
+                fontSize: screenSize.height * 0.016,
+                fontWeight: FontWeight.bold,
+                letterSpacing: screenSize.width * 0.0001,
+                color: const Color.fromRGBO(227, 28, 70, 1),
+              ),
+            ),
+          ),
+          SizedBox(height: screenSize.height * 0.02),
+          Container(
+            width: screenSize.width * 0.4,
+            height: screenSize.height * 0.06,
+            decoration: BoxDecoration(
+              border: Border.all(color: _confirmPwdBorderColor, width: 0.75),
+              borderRadius: BorderRadius.circular(screenSize.height * 0.015),
+            ),
+            child: TextFormField(
+              controller: _confirmPwdControler,
+              style: TextStyle(
+                fontFamily: 'NunitoSans',
+                fontSize: screenSize.height * 0.02,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromARGB(190, 0, 0, 0),
+              ),
+              obscureText: _obscureTextConfirmPwd,
+              focusNode: _focusNodeConfirmPwd,
+              decoration: InputDecoration(
+                suffixIcon: Padding(
+                  padding: EdgeInsets.only(right: screenSize.width * 0.005),
+                  child: IconButton(
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    splashColor: Colors.transparent,
+                    icon: Icon(
+                      _obscureTextConfirmPwd
+                          ? Icons.visibility_off
+                          : Icons.visibility,
+                      color: const Color.fromARGB(175, 0, 0, 0),
+                    ),
+                    onPressed: () => _togglePasswordVisibility(true),
                   ),
-                ],
+                ),
+                labelText: 'Confirme a senha',
+                labelStyle: TextStyle(
+                  fontFamily: 'NunitoSans',
+                  backgroundColor: Colors.white,
+                  fontSize: screenSize.height * 0.02,
+                  fontWeight: FontWeight.bold,
+                  color: const Color.fromARGB(175, 0, 0, 0),
+                ),
+                floatingLabelBehavior: FloatingLabelBehavior.auto,
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                ),
+                focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                ),
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: screenSize.width * 0.01,
+                  vertical: screenSize.height * 0.01,
+                ),
+              ),
+            ),
+          ),
+          Container(
+            height: screenSize.height * 0.03,
+            width: screenSize.width * 0.38,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              _confirmPwdError,
+              style: TextStyle(
+                fontFamily: 'NunitoSansBold',
+                fontSize: screenSize.height * 0.016,
+                fontWeight: FontWeight.bold,
+                letterSpacing: screenSize.width * 0.0001,
+                color: const Color.fromRGBO(227, 28, 70, 1),
+              ),
+            ),
+          ),
+          SizedBox(height: screenSize.height * 0.03),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(screenSize.width * 0.01),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: screenSize.width * 0.075,
+                      height: screenSize.height * 0.005,
+                      color: _upperCaseValidator,
+                    ),
+                    SizedBox(height: screenSize.height * 0.01),
+                    Text(
+                      'Letra maiúscula',
+                      style: TextStyle(
+                        fontFamily: 'NunitoSans',
+                        fontSize: screenSize.height * 0.018,
+                        fontWeight: FontWeight.bold,
+                        color: const Color.fromARGB(190, 0, 0, 0),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(screenSize.width * 0.01),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: screenSize.width * 0.075,
+                      height: screenSize.height * 0.005,
+                      color: _lowerCaseValidator,
+                    ),
+                    SizedBox(height: screenSize.height * 0.01),
+                    Text(
+                      'Letra minúscula',
+                      style: TextStyle(
+                        fontFamily: 'NunitoSans',
+                        fontSize: screenSize.height * 0.018,
+                        fontWeight: FontWeight.bold,
+                        color: const Color.fromARGB(190, 0, 0, 0),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(screenSize.width * 0.01),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: screenSize.width * 0.075,
+                      height: screenSize.height * 0.005,
+                      color: _numberValidator,
+                    ),
+                    SizedBox(height: screenSize.height * 0.01),
+                    Text(
+                      '1 número',
+                      style: TextStyle(
+                        fontFamily: 'NunitoSans',
+                        fontSize: screenSize.height * 0.018,
+                        fontWeight: FontWeight.bold,
+                        color: const Color.fromARGB(190, 0, 0, 0),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(screenSize.width * 0.01),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: screenSize.width * 0.075,
+                      height: screenSize.height * 0.005,
+                      color: _caracterCountValidator,
+                    ),
+                    SizedBox(height: screenSize.height * 0.01),
+                    Text(
+                      '8 ou + caracteres',
+                      style: TextStyle(
+                        fontFamily: 'NunitoSans',
+                        fontSize: screenSize.height * 0.018,
+                        fontWeight: FontWeight.bold,
+                        color: const Color.fromARGB(190, 0, 0, 0),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
-        ),
-        Text(
-          'Criar nova conta',
-          style: TextStyle(
-            fontFamily: 'NunitoSansBold',
-            fontSize: screenSize.height * 0.032,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
-        ),
-        SizedBox(height: screenSize.height * 0.03),
-        Text(
-          'Complete os campos com as suas informações',
-          style: TextStyle(
-            fontFamily: 'NunitoSans',
-            fontSize: screenSize.height * 0.022,
-            fontWeight: FontWeight.bold,
-            color: const Color.fromARGB(150, 0, 0, 0),
-          ),
-        ),
-        SizedBox(height: screenSize.height * 0.04),
-        Container(
-          width: screenSize.width * 0.4,
-          height: screenSize.height * 0.06,
-          decoration: BoxDecoration(
-            border: Border.all(color: _emailBorderColor, width: 0.75),
-            borderRadius: BorderRadius.circular(screenSize.height * 0.015),
-          ),
-          child: TextFormField(
-            controller: _emailControler,
-            style: TextStyle(
-              fontFamily: 'NunitoSans',
-              fontSize: screenSize.height * 0.02,
-              fontWeight: FontWeight.bold,
-              color: const Color.fromARGB(190, 0, 0, 0),
-            ),
-            focusNode: _focusNodeEmail,
-            decoration: InputDecoration(
-              labelText: 'E-mail',
-              labelStyle: TextStyle(
-                fontFamily: 'NunitoSans',
-                backgroundColor: Colors.white,
-                fontSize: screenSize.height * 0.02,
-                fontWeight: FontWeight.bold,
-                color: const Color.fromARGB(175, 0, 0, 0),
-              ),
-              floatingLabelBehavior: FloatingLabelBehavior.auto,
-              enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide.none,
-              ),
-              focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide.none,
-              ),
-              contentPadding: EdgeInsets.symmetric(
-                horizontal: screenSize.width * 0.01,
-                vertical: screenSize.height * 0.01,
-              ),
-            ),
-          ),
-        ),
-        Container(
-          height: screenSize.height * 0.03,
-          width: screenSize.width * 0.38,
-          alignment: Alignment.centerLeft,
-          child: Text(
-            _emailError,
-            style: TextStyle(
-              fontFamily: 'NunitoSansBold',
-              fontSize: screenSize.height * 0.016,
-              fontWeight: FontWeight.bold,
-              letterSpacing: screenSize.width * 0.0001,
-              color: const Color.fromRGBO(227, 28, 70, 1),
-            ),
-          ),
-        ),
-        SizedBox(height: screenSize.height * 0.02),
-        Container(
-          width: screenSize.width * 0.4,
-          height: screenSize.height * 0.06,
-          decoration: BoxDecoration(
-            border: Border.all(color: _pwdBorderColor, width: 0.75),
-            borderRadius: BorderRadius.circular(screenSize.height * 0.015),
-          ),
-          child: TextFormField(
-            controller: _pwdControler,
-            style: TextStyle(
-              fontFamily: 'NunitoSans',
-              fontSize: screenSize.height * 0.02,
-              fontWeight: FontWeight.bold,
-              color: const Color.fromARGB(190, 0, 0, 0),
-            ),
-            obscureText: _obscureTextPwd,
-            focusNode: _focusNodePwd,
-            decoration: InputDecoration(
-              suffixIcon: Padding(
-                padding: EdgeInsets.only(right: screenSize.width * 0.005),
-                child: IconButton(
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  splashColor: Colors.transparent,
-                  icon: Icon(
-                    _obscureTextPwd ? Icons.visibility_off : Icons.visibility,
-                    color: const Color.fromARGB(175, 0, 0, 0),
-                  ),
-                  onPressed: () => _togglePasswordVisibility(false),
+          SizedBox(height: screenSize.height * 0.03),
+          ElevatedButton(
+            onPressed:
+                isButtonEnabled
+                    ? () => _validateFields(myAccountProvider)
+                    : null,
+            style: ButtonStyle(
+              shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(screenSize.height * 0.01),
                 ),
               ),
-              labelText: 'Senha',
-              labelStyle: TextStyle(
-                fontFamily: 'NunitoSans',
-                backgroundColor: Colors.white,
-                fontSize: screenSize.height * 0.02,
-                fontWeight: FontWeight.bold,
-                color: const Color.fromARGB(175, 0, 0, 0),
+              backgroundColor: WidgetStateProperty.all<Color>(
+                Theme.of(context).primaryColorDark,
               ),
-              floatingLabelBehavior: FloatingLabelBehavior.auto,
-              enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide.none,
-              ),
-              focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide.none,
-              ),
-              contentPadding: EdgeInsets.symmetric(
-                horizontal: screenSize.width * 0.01,
-                vertical: screenSize.height * 0.01,
-              ),
+              overlayColor: WidgetStateProperty.all<Color>(Colors.transparent),
             ),
-          ),
-        ),
-        Container(
-          height: screenSize.height * 0.03,
-          width: screenSize.width * 0.38,
-          alignment: Alignment.centerLeft,
-          child: Text(
-            _pwdError,
-            style: TextStyle(
-              fontFamily: 'NunitoSansBold',
-              fontSize: screenSize.height * 0.016,
-              fontWeight: FontWeight.bold,
-              letterSpacing: screenSize.width * 0.0001,
-              color: const Color.fromRGBO(227, 28, 70, 1),
-            ),
-          ),
-        ),
-        SizedBox(height: screenSize.height * 0.02),
-        Container(
-          width: screenSize.width * 0.4,
-          height: screenSize.height * 0.06,
-          decoration: BoxDecoration(
-            border: Border.all(color: _confirmPwdBorderColor, width: 0.75),
-            borderRadius: BorderRadius.circular(screenSize.height * 0.015),
-          ),
-          child: TextFormField(
-            controller: _confirmPwdControler,
-            style: TextStyle(
-              fontFamily: 'NunitoSans',
-              fontSize: screenSize.height * 0.02,
-              fontWeight: FontWeight.bold,
-              color: const Color.fromARGB(190, 0, 0, 0),
-            ),
-            obscureText: _obscureTextConfirmPwd,
-            focusNode: _focusNodeConfirmPwd,
-            decoration: InputDecoration(
-              suffixIcon: Padding(
-                padding: EdgeInsets.only(right: screenSize.width * 0.005),
-                child: IconButton(
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  splashColor: Colors.transparent,
-                  icon: Icon(
-                    _obscureTextConfirmPwd
-                        ? Icons.visibility_off
-                        : Icons.visibility,
-                    color: const Color.fromARGB(175, 0, 0, 0),
-                  ),
-                  onPressed: () => _togglePasswordVisibility(true),
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: screenSize.width * 0.15,
+                vertical: screenSize.height * 0.02,
+              ),
+              child: Text(
+                'Criar conta',
+                style: TextStyle(
+                  fontFamily: 'NunitoSansBold',
+                  fontSize: screenSize.height * 0.02,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: screenSize.width * 0.0001,
+                  color: Colors.white,
                 ),
               ),
-              labelText: 'Confirme a senha',
-              labelStyle: TextStyle(
-                fontFamily: 'NunitoSans',
-                backgroundColor: Colors.white,
-                fontSize: screenSize.height * 0.02,
-                fontWeight: FontWeight.bold,
-                color: const Color.fromARGB(175, 0, 0, 0),
-              ),
-              floatingLabelBehavior: FloatingLabelBehavior.auto,
-              enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide.none,
-              ),
-              focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide.none,
-              ),
-              contentPadding: EdgeInsets.symmetric(
-                horizontal: screenSize.width * 0.01,
-                vertical: screenSize.height * 0.01,
-              ),
             ),
           ),
-        ),
-        Container(
-          height: screenSize.height * 0.03,
-          width: screenSize.width * 0.38,
-          alignment: Alignment.centerLeft,
-          child: Text(
-            _confirmPwdError,
-            style: TextStyle(
-              fontFamily: 'NunitoSansBold',
-              fontSize: screenSize.height * 0.016,
-              fontWeight: FontWeight.bold,
-              letterSpacing: screenSize.width * 0.0001,
-              color: const Color.fromRGBO(227, 28, 70, 1),
-            ),
-          ),
-        ),
-        SizedBox(height: screenSize.height * 0.03),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: EdgeInsets.all(screenSize.width * 0.01),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    width: screenSize.width * 0.075,
-                    height: screenSize.height * 0.005,
-                    color: _upperCaseValidator,
-                  ),
-                  SizedBox(height: screenSize.height * 0.01),
-                  Text(
-                    'Letra maiúscula',
-                    style: TextStyle(
-                      fontFamily: 'NunitoSans',
-                      fontSize: screenSize.height * 0.018,
-                      fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(190, 0, 0, 0),
-                    ),
-                  ),
-                ],
+          SizedBox(height: screenSize.height * 0.02),
+          TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              overlayColor: WidgetStateProperty.all<Color>(Colors.transparent),
+              surfaceTintColor: WidgetStateProperty.all<Color>(
+                Colors.transparent,
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(screenSize.width * 0.01),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    width: screenSize.width * 0.075,
-                    height: screenSize.height * 0.005,
-                    color: _lowerCaseValidator,
-                  ),
-                  SizedBox(height: screenSize.height * 0.01),
-                  Text(
-                    'Letra minúscula',
-                    style: TextStyle(
-                      fontFamily: 'NunitoSans',
-                      fontSize: screenSize.height * 0.018,
-                      fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(190, 0, 0, 0),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(screenSize.width * 0.01),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    width: screenSize.width * 0.075,
-                    height: screenSize.height * 0.005,
-                    color: _numberValidator,
-                  ),
-                  SizedBox(height: screenSize.height * 0.01),
-                  Text(
-                    '1 número',
-                    style: TextStyle(
-                      fontFamily: 'NunitoSans',
-                      fontSize: screenSize.height * 0.018,
-                      fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(190, 0, 0, 0),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(screenSize.width * 0.01),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    width: screenSize.width * 0.075,
-                    height: screenSize.height * 0.005,
-                    color: _caracterCountValidator,
-                  ),
-                  SizedBox(height: screenSize.height * 0.01),
-                  Text(
-                    '8 ou + caracteres',
-                    style: TextStyle(
-                      fontFamily: 'NunitoSans',
-                      fontSize: screenSize.height * 0.018,
-                      fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(190, 0, 0, 0),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-        SizedBox(height: screenSize.height * 0.03),
-        ElevatedButton(
-          onPressed: isButtonEnabled ? () => _createAccount() : null,
-          style: ButtonStyle(
-            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(screenSize.height * 0.01),
-              ),
-            ),
-            backgroundColor: WidgetStateProperty.all<Color>(
-              Theme.of(context).primaryColorDark,
-            ),
-            overlayColor: WidgetStateProperty.all<Color>(Colors.transparent),
-          ),
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: screenSize.width * 0.15,
-              vertical: screenSize.height * 0.02,
             ),
             child: Text(
-              'Criar conta',
+              'Voltar',
               style: TextStyle(
                 fontFamily: 'NunitoSansBold',
                 fontSize: screenSize.height * 0.02,
                 fontWeight: FontWeight.bold,
                 letterSpacing: screenSize.width * 0.0001,
-                color: Colors.white,
+                color: Theme.of(context).primaryColorDark,
               ),
             ),
           ),
-        ),
-        SizedBox(height: screenSize.height * 0.02),
-        TextButton(
-          onPressed: () {},
-          style: ButtonStyle(
-            overlayColor: WidgetStateProperty.all<Color>(Colors.transparent),
-            surfaceTintColor: WidgetStateProperty.all<Color>(
-              Colors.transparent,
-            ),
-          ),
-          child: Text(
-            'Voltar',
-            style: TextStyle(
-              fontFamily: 'NunitoSansBold',
-              fontSize: screenSize.height * 0.02,
-              fontWeight: FontWeight.bold,
-              letterSpacing: screenSize.width * 0.0001,
-              color: Theme.of(context).primaryColorDark,
-            ),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

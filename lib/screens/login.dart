@@ -84,7 +84,6 @@ class _LoginState extends State<Login> {
         myAccountProvider.validateLogin(
           _emailControler.text,
           _pwdControler.text,
-          selectedScreen,
         );
         Provider.of<OrderHistoryProvider>(context, listen: false)
             .orders
@@ -99,13 +98,10 @@ class _LoginState extends State<Login> {
         myAccountProvider.validateLogin(
           _emailControler.text,
           _pwdControler.text,
-          selectedScreen,
         );
         context.goNamed('servicos');
       },
     };
-
-    bool isButtonEnabled = true;
 
     return Material(
       color: Colors.white,
@@ -272,19 +268,17 @@ class _LoginState extends State<Login> {
                 ),
           ),
           ElevatedButton(
-            onPressed:
-                isButtonEnabled
-                    ? toScreen.keys.toList().contains(widget.fromScreen)
-                        ? () => toScreen[widget.fromScreen]!()
-                        : () {
-                          myAccountProvider.validateLogin(
-                            _emailControler.text,
-                            _pwdControler.text,
-                            selectedScreen,
-                          );
-                          context.goNamed('minha-conta');
-                        }
-                    : null,
+            onPressed: () {
+              myAccountProvider.validateLogin(
+                        _emailControler.text,
+                        _pwdControler.text,
+                      ) ==
+                      ''
+                  ? toScreen.keys.toList().contains(widget.fromScreen)
+                      ? toScreen[widget.fromScreen]!()
+                      : context.goNamed('minha-conta')
+                  : null;
+            },
             style: ButtonStyle(
               shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
@@ -313,6 +307,59 @@ class _LoginState extends State<Login> {
               ),
             ),
           ),
+          SizedBox(height: screenSize.height * 0.02),
+          if (toScreen.keys.toList().contains(widget.fromScreen))
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Não tem cadastro?',
+                  style: TextStyle(
+                    fontFamily: 'NunitoSans',
+                    fontSize: screenSize.height * 0.02,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: screenSize.width * 0.0001,
+                    color: const Color.fromARGB(187, 0, 0, 0),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    context.goNamed(
+                      'criar-conta',
+                      extra: {
+                        'fromScreen': widget.fromScreen,
+                        'orderID': widget.orderID,
+                      },
+                    );
+                  },
+                  style: ButtonStyle(
+                    foregroundColor: WidgetStateProperty.resolveWith<Color>((
+                      Set<WidgetState> states,
+                    ) {
+                      if (states.contains(WidgetState.hovered)) {
+                        return Theme.of(context).primaryColorDark;
+                      }
+                      return const Color.fromARGB(187, 0, 0, 0);
+                    }),
+                    overlayColor: WidgetStateProperty.all<Color>(
+                      Colors.transparent,
+                    ),
+                    surfaceTintColor: WidgetStateProperty.all<Color>(
+                      Colors.transparent,
+                    ),
+                  ),
+                  child: Text(
+                    'Criar conta',
+                    style: TextStyle(
+                      fontFamily: 'NunitoSansBold',
+                      fontSize: screenSize.height * 0.02,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           SizedBox(height: screenSize.height * 0.02),
           TextButton(
             onPressed: () {

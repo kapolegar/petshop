@@ -157,6 +157,7 @@ class _PayCartState extends State<PayCart> {
         Provider.of<OrderHistoryProvider>(context, listen: false);
 
     return Material(
+      color: Colors.white,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

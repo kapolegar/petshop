@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:petshop/providers/my_account_provider.dart';
 import 'package:petshop/components/my_account_components/edit_pets_card.dart';
@@ -246,6 +247,43 @@ class _MyAccountPageState extends State<MyAccountPage> {
                                       .updateAccountDetailsScreen(
                                         const MyCreditCards(),
                                       ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                              vertical: screenSize.height * 0.02,
+                            ),
+                            child: ElevatedButton(
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.logout,
+                                    color: const Color.fromRGBO(227, 28, 70, 1),
+                                    size: screenSize.height * 0.04,
+                                  ),
+                                  SizedBox(width: screenSize.width * 0.02),
+                                  Text(
+                                    'Sair',
+                                    style: TextStyle(
+                                      fontFamily: 'NunitoSansBold',
+                                      fontSize: screenSize.height * 0.018,
+                                      letterSpacing: screenSize.width * 0.0001,
+                                      fontWeight: FontWeight.bold,
+                                      height: screenSize.height * 0.003,
+                                      color: const Color.fromARGB(
+                                        255,
+                                        227,
+                                        28,
+                                        71,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              onPressed: () {
+                                myAccountProvider.logOff();
+                                context.goNamed('home');
+                              },
                             ),
                           ),
                         ],
