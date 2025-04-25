@@ -94695,7 +94695,7 @@ A.avy.prototype={
 $0(){this.b.Ut(new A.hX(this.a.a.f,1))},
 $S:0}
 A.BN.prototype={
-a7(){return new A.Go(A.aKB(1,0.8),A.a(["images/banners/banner1.png","images/banners/banner2.png","images/banners/banner3.png","images/banners/banner4.png"],t.s))}}
+a7(){return new A.Go(A.aKB(1,0.8),A.a(["assets/images/banners/banner1.png","assets/images/banners/banner2.png","assets/images/banners/banner3.png","assets/images/banners/banner4.png"],t.s))}}
 A.Go.prototype={
 gue(){var s=this.f,r=A.a([B.b.gaL(s)],t.s)
 B.b.a1(r,s)

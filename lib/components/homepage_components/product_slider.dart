@@ -16,10 +16,10 @@ class _ProductSliderState extends State<ProductSlider> {
   int _currentIndex = 1;
 
   final List<String> _cardImages = [
-    "images/banners/banner1.png",
-    "images/banners/banner2.png",
-    "images/banners/banner3.png",
-    "images/banners/banner4.png",
+    "assets/images/banners/banner1.png",
+    "assets/images/banners/banner2.png",
+    "assets/images/banners/banner3.png",
+    "assets/images/banners/banner4.png",
   ];
 
   List<String> get _loopedImages => [
