@@ -114,7 +114,7 @@ class _ItemCardState extends State<ItemCard> {
               ),
             ),
             Text(
-              'R\$ ${widget.product.preco.toString().replaceAll('.', ',')}',
+              'R\$ ${(double.parse(widget.product.preco)).toStringAsFixed(2).replaceAll('.', ',')}',
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ],

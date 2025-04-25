@@ -170,7 +170,7 @@ class _BuyCartState extends State<BuyCart> {
                                             alignment: Alignment.center,
                                             width: screenSize.width * 0.075,
                                             child: Text(
-                                              'R\$ ${item.product.preco.toString().replaceAll('.', ',')}',
+                                              'R\$ ${double.parse(item.product.preco).toStringAsFixed(2).replaceAll('.', ',')}',
                                               style:
                                                   Theme.of(
                                                     context,
@@ -303,7 +303,7 @@ class _BuyCartState extends State<BuyCart> {
                                       'Valor dos produtos(${shoppingCartProvider.totalCartItems.toString()} ${shoppingCartProvider.totalCartItems == 1 ? 'item):' : 'itens):'}',
                                     ),
                                     Text(
-                                      'R\$ ${shoppingCartProvider.totalCartValue.toStringAsFixed(2)}',
+                                      'R\$ ${shoppingCartProvider.totalCartValue.toStringAsFixed(2).replaceAll('.', ',')}',
                                       style:
                                           Theme.of(
                                             context,

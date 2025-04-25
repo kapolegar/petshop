@@ -250,7 +250,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                           style: Theme.of(context).textTheme.labelLarge,
                         ),
                         Text(
-                          'R\$ ${shoppingCartProvider.totalCartValue.toStringAsFixed(2)}',
+                          'R\$ ${shoppingCartProvider.totalCartValue.toStringAsFixed(2).replaceAll('.', ',')}',
                           style: Theme.of(context).textTheme.labelLarge,
                         ),
                       ],
