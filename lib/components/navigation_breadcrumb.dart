@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:petshop/models/product.dart';
 import '../providers/selected_screen_provider.dart';
 
 class NavigationBreadcrumb extends StatefulWidget {
-  const NavigationBreadcrumb({super.key});
+  final Product product;
+  const NavigationBreadcrumb({required this.product, super.key});
 
   @override
   State<NavigationBreadcrumb> createState() => _NavigationBreadcrumbState();
@@ -13,34 +15,45 @@ class _NavigationBreadcrumbState extends State<NavigationBreadcrumb> {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
-    var navTracker = Provider.of<SelectScreen>(context);
+    SelectScreen navTracker = Provider.of<SelectScreen>(context);
 
     return Padding(
-      padding: EdgeInsets.only(top: screenSize.height * 0.03),
+      padding: EdgeInsets.symmetric(
+        vertical: screenSize.height * 0.02,
+        horizontal: screenSize.width * 0.075,
+      ),
       child: Wrap(
         spacing: screenSize.width * 0.005,
         alignment: WrapAlignment.center,
-        children: List.generate(
-          navTracker.routes.length * 2 - 1,
-          (index) {
-            if (index.isEven) {
-              // Cria o botão de navegação
-              int routeIndex = index ~/ 2;
-              return ElevatedButton(
-                onPressed: () {
-                  navTracker.goToRoute(context, navTracker.routes[routeIndex]);
-                },
-                child: Text(
+        children: List.generate(navTracker.routes.length * 2 - 1, (index) {
+          if (index.isEven) {
+            int routeIndex = index ~/ 2;
+            return ElevatedButton(
+              onPressed: () {
+                navTracker.goToRoute(
+                  context,
                   navTracker.routes[routeIndex],
-                  style: Theme.of(context).textTheme.bodyMedium,
+                  widget.product,
+                );
+              },
+              child: Text(
+                navTracker.routes[routeIndex],
+                style: TextStyle(
+                  fontFamily: 'NunitoSansBold',
+                  fontSize: screenSize.height * 0.018,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: screenSize.width * 0.0001,
+                  color: Theme.of(context).primaryColorDark,
                 ),
-              );
-            } else {
-              // Adiciona o separador ">" entre os itens
-              return Icon(Icons.arrow_right_sharp);
-            }
-          },
-        ),
+              ),
+            );
+          } else {
+            return Icon(
+              Icons.arrow_right_sharp,
+              color: Theme.of(context).primaryColorDark,
+            );
+          }
+        }),
       ),
     );
   }

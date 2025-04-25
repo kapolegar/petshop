@@ -41,21 +41,17 @@ class _ContactPageState extends State<ContactPage> {
                     'SOBRE NÓS',
                     style: Theme.of(context).textTheme.labelLarge,
                   ),
-                  SizedBox(
-                    height: screenSize.height * 0.04,
-                  ),
+                  SizedBox(height: screenSize.height * 0.04),
                   Text(
                     'Lorem ipsum dolor sit amet. Id voluptatem nobis hic rerum facere et voluptates consectetur. Eos reiciendis obcaecati et porro voluptates ut aspernatur aliquid qui fugiat sapiente.\n\nEt culpa aspernatur ut repellendus esse cum nobis consectetur? Ad recusandae rerum ut placeat nobis ut error nesciunt. Eos quasi natus et amet eveniet 33 dignissimos officiis qui consequatur asperiores.\n\nEt omnis neque et dolores magni quo rerum libero eos sint quasi ut odio minus! A explicabo quia eos quis nobis ex galisum maiores id inventore pariatur sit omnis adipisci.',
                     textAlign: TextAlign.justify,
                     style: Theme.of(context).textTheme.bodyMedium,
-                  )
+                  ),
                 ],
               ),
             ),
           ),
-          SizedBox(
-            width: screenSize.width * 0.02,
-          ),
+          SizedBox(width: screenSize.width * 0.02),
           SizedBox(
             height: screenSize.height * 0.55,
             width: screenSize.width * 0.3,
@@ -63,16 +59,12 @@ class _ContactPageState extends State<ContactPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
-                  height: screenSize.height * 0.05,
-                ),
+                SizedBox(height: screenSize.height * 0.05),
                 Text(
                   'FALE CONOSCO',
                   style: Theme.of(context).textTheme.labelLarge,
                 ),
-                SizedBox(
-                  height: screenSize.height * 0.05,
-                ),
+                SizedBox(height: screenSize.height * 0.05),
                 SizedBox(
                   width: screenSize.width * 0.2,
                   child: Column(
@@ -81,53 +73,49 @@ class _ContactPageState extends State<ContactPage> {
                         children: [
                           Icon(
                             Icons.phone_enabled_rounded,
-                            color: Theme.of(context).highlightColor,
+                            color: Theme.of(context).primaryColorDark,
                             size: screenSize.height * 0.04,
                           ),
-                          SizedBox(
-                            width: screenSize.width * 0.015,
+                          SizedBox(width: screenSize.width * 0.015),
+                          Text(
+                            '0000 - 0000 ou 3333 - 3333',
+                            style: Theme.of(context).textTheme.bodyMedium,
                           ),
-                          Text('0000 - 0000 ou 3333 - 3333',
-                              style: Theme.of(context).textTheme.bodyMedium)
                         ],
                       ),
-                      SizedBox(
-                        height: screenSize.height * 0.02,
-                      ),
+                      SizedBox(height: screenSize.height * 0.02),
                       Row(
                         children: [
                           Icon(
                             Icons.alternate_email,
-                            color: Theme.of(context).highlightColor,
+                            color: Theme.of(context).primaryColorDark,
                             size: screenSize.height * 0.04,
                           ),
-                          SizedBox(
-                            width: screenSize.width * 0.015,
+                          SizedBox(width: screenSize.width * 0.015),
+                          Text(
+                            'cuties@cutiespetshop.com.br',
+                            style: Theme.of(context).textTheme.bodyMedium,
                           ),
-                          Text('cuties@cutiespetshop.com.br',
-                              style: Theme.of(context).textTheme.bodyMedium)
                         ],
                       ),
-                      SizedBox(
-                        height: screenSize.height * 0.02,
-                      ),
+                      SizedBox(height: screenSize.height * 0.02),
                       Row(
                         children: [
                           FaIcon(
                             FontAwesomeIcons.instagram,
                             size: screenSize.height * 0.04,
-                            color: Theme.of(context).highlightColor,
+                            color: Theme.of(context).primaryColorDark,
                           ),
-                          SizedBox(
-                            width: screenSize.width * 0.015,
+                          SizedBox(width: screenSize.width * 0.015),
+                          Text(
+                            '@cutiespetshop',
+                            style: Theme.of(context).textTheme.bodyMedium,
                           ),
-                          Text('@cutiespetshop',
-                              style: Theme.of(context).textTheme.bodyMedium)
                         ],
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),

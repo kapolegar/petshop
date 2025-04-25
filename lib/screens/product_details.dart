@@ -1,14 +1,15 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinbox/material.dart';
-import 'package:petshop/components/navigation_breadcrumb.dart';
 import 'package:provider/provider.dart';
-
+import 'package:petshop/models/product.dart';
+import 'package:flutter_spinbox/material.dart';
+import 'package:petshop/models/cart_item.dart';
 import '../providers/selected_screen_provider.dart';
+import 'package:petshop/providers/shopping_cart_provider.dart';
 
 class ProductDetails extends StatefulWidget {
-  final String image;
-  const ProductDetails({super.key, required this.image});
+  final Product product;
+  const ProductDetails({super.key, required this.product});
 
   @override
   State<ProductDetails> createState() => _ProductDetailsState();
@@ -19,6 +20,7 @@ class _ProductDetailsState extends State<ProductDetails> {
   Offset _offset = Offset.zero;
   final ScrollController _scrollController = ScrollController();
   final GlobalKey _targetKey = GlobalKey();
+  int quantity = 1;
 
   void _onEnter(PointerEnterEvent event) {
     setState(() {
@@ -58,8 +60,12 @@ class _ProductDetailsState extends State<ProductDetails> {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     final widgetSize = Size(screenSize.width * 0.3, screenSize.height * 0.5);
-    SelectScreen selectedScreen =
-        Provider.of<SelectScreen>(context, listen: false);
+    SelectScreen selectedScreen = Provider.of<SelectScreen>(
+      context,
+      listen: false,
+    );
+    ShoppingCartProvider shoppingCartProvider =
+        Provider.of<ShoppingCartProvider>(context, listen: false);
 
     return Padding(
       padding: EdgeInsets.symmetric(
@@ -71,11 +77,9 @@ class _ProductDetailsState extends State<ProductDetails> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const NavigationBreadcrumb(),
+            // NavigationBreadcrumb(product: widget.product),
             Padding(
-              padding: EdgeInsets.symmetric(
-                vertical: screenSize.height * 0.05,
-              ),
+              padding: EdgeInsets.symmetric(vertical: screenSize.height * 0.05),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -89,19 +93,20 @@ class _ProductDetailsState extends State<ProductDetails> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(15),
                         child: TweenAnimationBuilder(
-                          duration: Duration(milliseconds: 150),
+                          duration: const Duration(milliseconds: 150),
                           tween: Tween<double>(begin: 1.0, end: _scale),
                           builder: (context, scale, child) {
                             return Transform(
                               alignment: Alignment.center,
-                              transform: Matrix4.identity()
-                                ..translate(_offset.dx, _offset.dy)
-                                ..scale(scale),
+                              transform:
+                                  Matrix4.identity()
+                                    ..translate(_offset.dx, _offset.dy)
+                                    ..scale(scale),
                               child: child,
                             );
                           },
                           child: Image.asset(
-                            'images/products/racao_gato1.jpg',
+                            widget.product.imagemUrl,
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -114,21 +119,20 @@ class _ProductDetailsState extends State<ProductDetails> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        'Exemplo Produto',
+                        widget.product.nome,
                         style: Theme.of(context).textTheme.labelMedium,
                       ),
-                      SizedBox(
-                        height: screenSize.height * 0.015,
-                      ),
+                      SizedBox(height: screenSize.height * 0.015),
                       Row(
                         children: [
                           Text(
-                            'Código: 00000000000000',
+                            'ID: ${widget.product.id}',
                             style: Theme.of(context).textTheme.labelSmall,
                           ),
                           Padding(
                             padding: EdgeInsets.symmetric(
-                                horizontal: screenSize.width * 0.0075),
+                              horizontal: screenSize.width * 0.0075,
+                            ),
                             child: Text(
                               '|',
                               style: Theme.of(context).textTheme.labelSmall,
@@ -139,8 +143,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                               _scrollToWidget();
                             },
                             style: ButtonStyle(
-                                overlayColor: MaterialStateProperty.all<Color>(
-                                    Colors.transparent)),
+                              overlayColor: WidgetStateProperty.all<Color>(
+                                Colors.transparent,
+                              ),
+                            ),
                             child: Text(
                               'Ver descrição completa',
                               style: Theme.of(context).textTheme.labelSmall,
@@ -148,16 +154,12 @@ class _ProductDetailsState extends State<ProductDetails> {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: screenSize.height * 0.02,
-                      ),
+                      SizedBox(height: screenSize.height * 0.02),
                       Text(
                         'R\$ 35,00',
                         style: Theme.of(context).textTheme.labelLarge,
                       ),
-                      SizedBox(
-                        height: screenSize.height * 0.04,
-                      ),
+                      SizedBox(height: screenSize.height * 0.04),
                       Row(
                         children: [
                           SizedBox(
@@ -167,70 +169,78 @@ class _ProductDetailsState extends State<ProductDetails> {
                               min: 1,
                               max: 100,
                               value: 1,
-                              onChanged: (value) => print('Valor: $value'),
+                              onChanged:
+                                  (value) =>
+                                      quantity = int.parse((value).toString()),
                               textStyle: TextStyle(
-                                  fontFamily: 'NunitoSansBold',
-                                  fontSize: screenSize.height * 0.016,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black),
+                                fontFamily: 'NunitoSansBold',
+                                fontSize: screenSize.height * 0.016,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
                               decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                          color:
-                                              Theme.of(context).dividerColor))),
+                                border: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Theme.of(context).dividerColor,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
-                          SizedBox(
-                            width: screenSize.width * 0.01,
-                          ),
+                          SizedBox(width: screenSize.width * 0.01),
                           SizedBox(
                             width: screenSize.width * 0.25,
                             height: screenSize.height * 0.06,
                             child: ElevatedButton(
-                                style: ButtonStyle(
-                                    shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(
-                                            screenSize.height * 0.015),
-                                      ),
+                              style: ButtonStyle(
+                                shape: WidgetStateProperty.all<
+                                  RoundedRectangleBorder
+                                >(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                      screenSize.height * 0.015,
                                     ),
-                                    backgroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Theme.of(context).primaryColor)),
-                                onPressed: () {
-                                  selectedScreen.scaffoldKey.currentState
-                                      ?.openEndDrawer();
-                                },
-                                child: Text(
-                                  'Adicionar ao carrinho',
-                                  style: TextStyle(
-                                    fontFamily: 'NunitoSansBold',
-                                    fontSize: screenSize.height * 0.022,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: screenSize.width * 0.0001,
-                                    color:
-                                        const Color.fromRGBO(255, 255, 255, 1),
                                   ),
-                                )),
-                          )
+                                ),
+                                backgroundColor: WidgetStateProperty.all<Color>(
+                                  Theme.of(context).primaryColor,
+                                ),
+                              ),
+                              onPressed: () {
+                                shoppingCartProvider.addToCart(
+                                  CartItem(
+                                    product: widget.product,
+                                    quantity: quantity,
+                                  ),
+                                );
+                                selectedScreen.scaffoldKey.currentState
+                                    ?.openEndDrawer();
+                              },
+                              child: Text(
+                                'Adicionar ao carrinho',
+                                style: TextStyle(
+                                  fontFamily: 'NunitoSansBold',
+                                  fontSize: screenSize.height * 0.022,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: screenSize.width * 0.0001,
+                                  color: const Color.fromRGBO(255, 255, 255, 1),
+                                ),
+                              ),
+                            ),
+                          ),
                         ],
-                      )
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
-            SizedBox(
-              height: screenSize.height * 0.02,
-            ),
+            SizedBox(height: screenSize.height * 0.02),
             Text(
               'DESCRIÇÃO DO PRODUTO',
               style: Theme.of(context).textTheme.bodySmall,
             ),
-            SizedBox(
-              height: screenSize.height * 0.015,
-            ),
+            SizedBox(height: screenSize.height * 0.015),
             SizedBox(
               width: screenSize.width * 0.5,
               child: Text(
@@ -238,10 +248,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 style: Theme.of(context).textTheme.labelSmall,
               ),
             ),
-            SizedBox(
-              height: screenSize.height * 0.015,
-              key: _targetKey,
-            )
+            SizedBox(height: screenSize.height * 0.015, key: _targetKey),
           ],
         ),
       ),

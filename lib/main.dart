@@ -1,13 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:petshop/screens/home.dart';
 import 'package:provider/provider.dart';
+import 'package:petshop/app_routes.dart';
 import 'providers/selected_screen_provider.dart';
-import 'screens/homepage.dart';
+import 'package:petshop/providers/products_provider.dart';
+import 'package:petshop/providers/services_provider.dart';
+import 'package:petshop/providers/my_account_provider.dart';
+import 'package:petshop/providers/order_history_provider.dart';
+import 'package:petshop/providers/shopping_cart_provider.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => SelectScreen(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider<SelectScreen>(
+          create: (context) => SelectScreen(),
+        ),
+        ChangeNotifierProvider<Services>(create: (context) => Services()),
+        ChangeNotifierProvider<MyAccount>(create: (context) => MyAccount()),
+        ChangeNotifierProvider<ProductsProvider>(
+          create: (context) => ProductsProvider(),
+        ),
+        ChangeNotifierProvider<ShoppingCartProvider>(
+          create: (context) => ShoppingCartProvider(),
+        ),
+        ChangeNotifierProvider<OrderHistoryProvider>(
+          create: (context) => OrderHistoryProvider(),
+        ),
+      ],
       child: const MyApp(),
     ),
   );
@@ -16,22 +36,28 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
 
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [Locale('pt', 'BR')],
       title: 'PetShop',
       theme: ThemeData(
-        // Cores principais
         scaffoldBackgroundColor: const Color.fromRGBO(255, 255, 255, 1),
-        primaryColor: Color.fromARGB(255, 21, 202, 163),
-        highlightColor: const Color.fromRGBO(227, 28, 70, 1),
-        hoverColor: const Color.fromARGB(27, 227, 28, 71),
-        dividerColor: Color.fromARGB(79, 227, 28, 71),
+        primaryColor: const Color.fromARGB(255, 21, 202, 163),
+        primaryColorDark: const Color.fromRGBO(227, 28, 70, 1),
+        highlightColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+        dividerColor: const Color.fromARGB(79, 227, 28, 71),
+        splashColor: Colors.transparent,
 
-        // Configuração do TextTheme
         textTheme: TextTheme(
           displayLarge: TextStyle(
             fontFamily: 'NunitoSansBold',
@@ -82,7 +108,6 @@ class MyApp extends StatelessWidget {
           ),
         ),
 
-        // Outras configurações de tema
         appBarTheme: AppBarTheme(
           toolbarHeight: screenSize.height * 0.2,
           color: const Color.fromRGBO(255, 255, 255, 1),
@@ -94,23 +119,25 @@ class MyApp extends StatelessWidget {
           ),
         ),
         scrollbarTheme: ScrollbarThemeData(
-          thumbVisibility: MaterialStateProperty.all(true),
-          thumbColor:
-              MaterialStateProperty.all(const Color.fromRGBO(28, 227, 185, 1)),
-          trackColor:
-              MaterialStateProperty.all(const Color.fromRGBO(255, 255, 255, 1)),
-          thickness: MaterialStateProperty.all(screenSize.height * 0.0075),
-          // radius: Radius.circular(10),
+          thumbVisibility: WidgetStateProperty.all(true),
+          thumbColor: WidgetStateProperty.all(
+            const Color.fromRGBO(28, 227, 185, 1),
+          ),
+          trackColor: WidgetStateProperty.all(
+            const Color.fromRGBO(255, 255, 255, 1),
+          ),
+          thickness: WidgetStateProperty.all(screenSize.height * 0.0075),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.transparent),
-            elevation: MaterialStateProperty.all(0),
-            surfaceTintColor: MaterialStateProperty.all(Colors.transparent),
+            backgroundColor: WidgetStateProperty.all(Colors.transparent),
+            elevation: WidgetStateProperty.all(0),
+            surfaceTintColor: WidgetStateProperty.all(Colors.transparent),
+            overlayColor: WidgetStateProperty.all(Colors.transparent),
+            shadowColor: WidgetStateProperty.all(Colors.transparent),
           ),
         ),
       ),
-      home: const Home(),
     );
   }
 }
