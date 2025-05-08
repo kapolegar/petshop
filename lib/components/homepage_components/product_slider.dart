@@ -1,5 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:petshop/providers/products_provider.dart';
+import 'package:petshop/providers/selected_screen_provider.dart';
+import 'package:provider/provider.dart';
 
 class ProductSlider extends StatefulWidget {
   const ProductSlider({super.key});
@@ -21,6 +25,16 @@ class _ProductSliderState extends State<ProductSlider> {
     "assets/images/banners/banner3.png",
     "assets/images/banners/banner4.png",
   ];
+
+  void _onPressed(int index) {
+    final List<VoidCallback> actions = [
+      () => context.goNamed('servicos'),
+      () => context.goNamed('servicos'),
+      () => context.goNamed('produtos', queryParameters: {'filtro': 'Golden'}),
+      () => context.goNamed('contato'),
+    ];
+    actions[index]();
+  }
 
   List<String> get _loopedImages => [
     _cardImages.last,
@@ -81,6 +95,10 @@ class _ProductSliderState extends State<ProductSlider> {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
+    ProductsProvider productsProvider = Provider.of<ProductsProvider>(
+      context,
+      listen: false,
+    );
 
     return SizedBox(
       height: screenSize.height * 0.25,
@@ -96,20 +114,31 @@ class _ProductSliderState extends State<ProductSlider> {
               _fixLoop();
             },
             itemBuilder: (context, index) {
-              return AnimatedContainer(
-                duration: const Duration(milliseconds: 150),
-                margin: EdgeInsets.symmetric(
-                  horizontal: screenSize.height * 0.015,
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(screenSize.height * 0.04),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(screenSize.height * 0.04),
-                  child: Image.asset(
-                    _loopedImages[index],
-                    height: screenSize.height * 0.25,
-                    fit: BoxFit.cover,
+              return ElevatedButton(
+                onPressed: () {
+                  int realIndex = (index - 1) % _cardImages.length;
+                  _onPressed(realIndex);
+                },
+
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 150),
+                  margin: EdgeInsets.symmetric(
+                    horizontal: screenSize.height * 0.015,
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(
+                      screenSize.height * 0.04,
+                    ),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(
+                      screenSize.height * 0.04,
+                    ),
+                    child: Image.asset(
+                      _loopedImages[index],
+                      height: screenSize.height * 0.25,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               );
