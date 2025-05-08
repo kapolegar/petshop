@@ -8,7 +8,7 @@
         "idade": "4",
         "porte": "Pequeno",
         "pelagem": "Branca e laranja",
-        "imagem": "images/pets/mia.png"
+        "imagem": "assets/images/pets/mia.png"
     },
     {
         "id": "1",
@@ -19,7 +19,7 @@
         "idade": "4",
         "porte": "Pequeno",
         "pelagem": "Branca e laranja",
-        "imagem": "images/pets/pepper.png"
+        "imagem": "assets/images/pets/pepper.png"
     },
     {
         "id": "2",
@@ -30,7 +30,7 @@
         "idade": "4",
         "porte": "Médio",
         "pelagem": "Cinza mescla",
-        "imagem": "images/pets/anya.png"
+        "imagem": "assets/images/pets/anya.png"
     },
     {
         "id": "3",
@@ -41,6 +41,6 @@
         "idade": "3",
         "porte": "Médio",
         "pelagem": "Cinza mescla",
-        "imagem": "images/pets/gigi.png"
+        "imagem": "assets/images/pets/gigi.png"
     }
 ]
