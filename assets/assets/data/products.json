@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "1",
+    "nome": "Golden Special Frango e Carne Gatos Castrados",
+    "descricao": "Ração premium para gatos, com vitaminas essenciais.",
+    "preco": "42.99",
+    "imagemUrl": "assets/images/products/racao_gato1.jpg",
+    "categoria": "Ração Gatos Castrados",
+    "estoque": "30",
+    "pet": "Gatos"
+  },
+  {
+    "id": "2",
+    "nome": "Golden Special Frango e Carne Gatos Adultos",
+    "descricao": "Ração sabor frango para gatos adultos.",
+    "preco": "38.5",
+    "imagemUrl": "assets/images/products/racao_gato2.jpg",
+    "categoria": "Ração Gatos Adultos",
+    "estoque": "25",
+    "pet": "Gatos"
+  },
+  {
+    "id": "3",
+    "nome": "Golden Gatos Salmão Gatos Castrados",
+    "descricao": "Alimento completo e balanceado para felinos.",
+    "preco": "45.0",
+    "imagemUrl": "assets/images/products/racao_gato3.jpg",
+    "categoria": "Ração Gatos Castrados",
+    "estoque": "40",
+    "pet": "Gatos"
+  },
+  {
+    "id": "4",
+    "nome": "Golden Gatos Frango Gatos Castrados",
+    "descricao": "Alimento completo e balanceado para felinos.",
+    "preco": "45.0",
+    "imagemUrl": "assets/images/products/racao_gato4.jpg",
+    "categoria": "Ração Gatos Castrados",
+    "estoque": "40",
+    "pet": "Gatos"
+  },
+  {
+    "id": "5",
+    "nome": "Golden Gatos Carne Gatos Castrados",
+    "descricao": "Alimento completo e balanceado para felinos.",
+    "preco": "45.0",
+    "imagemUrl": "assets/images/products/racao_gato5.jpg",
+    "categoria": "Ração Gatos Castrados",
+    "estoque": "40",
+    "pet": "Gatos"
+  },
+  {
+    "id": "6",
+    "nome": "Golden Gatos Frango Filhotes",
+    "descricao": "Alimento completo e balanceado para felinos.",
+    "preco": "45.0",
+    "imagemUrl": "assets/images/products/racao_gato6.jpg",
+    "categoria": "Ração Gatos Filhotes",
+    "estoque": "40",
+    "pet": "Gatos"
+  },
+  {
+    "id": "7",
+    "nome": "Golden Seleção Natural Frango c/ Abóbora e Alecrim Gatos Castrados",
+    "descricao": "Alimento completo e balanceado para felinos.",
+    "preco": "45.0",
+    "imagemUrl": "assets/images/products/racao_gato7.jpg",
+    "categoria": "Ração Gatos Castrados",
+    "estoque": "40",
+    "pet": "Gatos"
+  },
+  {
+    "id": "8",
+    "nome": "Golden Seleção Natural Frango e Arroz Gatos Adultos",
+    "descricao": "Alimento completo e balanceado para felinos.",
+    "preco": "45.0",
+    "imagemUrl": "assets/images/products/racao_gato8.jpg",
+    "categoria": "Ração Gatos Adultos",
+    "estoque": "40",
+    "pet": "Gatos"
+  },
+  {
+    "id": "9",
+    "nome": "Sachê Golden Gourmet Frango c/ Abóbora e Arroz Integral Gatos Castrados",
+    "descricao": "Alimento completo e balanceado para felinos.",
+    "preco": "45.0",
+    "imagemUrl": "assets/images/products/racao_gato9.jpg",
+    "categoria": "Sachê Gatos Castrados",
+    "estoque": "40",
+    "pet": "Gatos"
+  },
+  {
+    "id": "10",
+    "nome": "Golden Gatos Carne Gatos Adultos",
+    "descricao": "Alimento completo e balanceado para felinos.",
+    "preco": "45.0",
+    "imagemUrl": "assets/images/products/racao_gato10.jpg",
+    "categoria": "Ração Gatos Adultos",
+    "estoque": "40",
+    "pet": "Gatos"
+  },
+  {
+    "id": "11",
+    "nome": "Golden Special Frango e Carne Cães Adultos",
+    "descricao": "Alimento completo e balanceado para cães.",
+    "preco": "45.0",
+    "imagemUrl": "assets/images/products/racao1.jpg",
+    "categoria": "Ração Cães Adultos",
+    "estoque": "40",
+    "pet": "Cães"
+  },
+  {
+    "id": "12",
+    "nome": "Gran Plus Gourmet Carne Cães Adultos",
+    "descricao": "Alimento completo e balanceado para cães.",
+    "preco": "45.0",
+    "imagemUrl": "assets/images/products/racao2.jpg",
+    "categoria": "Ração Cães Adultos",
+    "estoque": "40",
+    "pet": "Cães"
+  },
+  {
+    "id": "13",
+    "nome": "Golden Formula Carne e Arroz Cães Adultos Pequeno Porte",
+    "descricao": "Alimento completo e balanceado para cães.",
+    "preco": "45.0",
+    "imagemUrl": "assets/images/products/racao3.jpg",
+    "categoria": "Ração Cães Adultos Pequeno Porte",
+    "estoque": "40",
+    "pet": "Cães"
+  },
+  {
+    "id": "14",
+    "nome": "Gran Plus Choice Frango e Carne Cães Adultos",
+    "descricao": "Alimento completo e balanceado para cães.",
+    "preco": "45.0",
+    "imagemUrl": "assets/images/products/racao4.jpg",
+    "categoria": "Ração Cães Adultos",
+    "estoque": "40",
+    "pet": "Cães"
+  },
+  {
+    "id": "15",
+    "nome": "Premier Nutrição Clínica Prot. Hidrolisada e Mandioca Cães Adultos e Filhotes",
+    "descricao": "Alimento completo e balanceado para cães.",
+    "preco": "45.0",
+    "imagemUrl": "assets/images/products/racao5.jpg",
+    "categoria": "Promoção Ração Cães Adultos e Filhotes",
+    "estoque": "40",
+    "pet": "Cães"
+  },
+  {
+    "id": "16",
+    "nome": "Golden Power Training Frango e Arroz Cães Adultos Treinamento e Competição",
+    "descricao": "Alimento completo e balanceado para cães.",
+    "preco": "45.0",
+    "imagemUrl": "assets/images/products/racao6.jpg",
+    "categoria": "Promoção Ração Cães Adultos Treinamento e Competição",
+    "estoque": "40",
+    "pet": "Cães"
+  },
+  {
+    "id": "17",
+    "nome": "Golden Duii Frango e Carne Cães Adultos",
+    "descricao": "Alimento completo e balanceado para cães.",
+    "preco": "45.0",
+    "imagemUrl": "assets/images/products/racao7.jpg",
+    "categoria": "Ração Cães Adultos",
+    "estoque": "40",
+    "pet": "Cães"
+  },
+  {
+    "id": "18",
+    "nome": "Arranhador Torre",
+    "descricao": "Arranhador com Brinquedo de alta qualidade para arranhadoress.",
+    "preco": "84.0",
+    "imagemUrl": "assets/images/products/arranhador1.jpg",
+    "categoria": "Arranhadores Gatos",
+    "estoque": "42",
+    "pet": "Gatos"
+  },
+  {
+    "id": "19",
+    "nome": "Arranhador Compacto de Papelão",
+    "descricao": "Arranhador Compacto de alta qualidade para arranhadoress.",
+    "preco": "58.48",
+    "imagemUrl": "assets/images/products/arranhador2.jpg",
+    "categoria": "Arranhadores Gatos",
+    "estoque": "50",
+    "pet": "Gatos"
+  },
+  {
+    "id": "20",
+    "nome": "Arranhador Televisão de Papelão",
+    "descricao": "Arranhador com Brinquedo de alta qualidade para arranhadoress.",
+    "preco": "29.33",
+    "imagemUrl": "assets/images/products/arranhador3.jpg",
+    "categoria": "Arranhadores Gatos",
+    "estoque": "40",
+    "pet": "Gatos"
+  },
+  {
+    "id": "21",
+    "nome": "Arranhador Compacto de Papelão Liso",
+    "descricao": "Arranhador Compacto de alta qualidade para arranhadoress.",
+    "preco": "186.21",
+    "imagemUrl": "assets/images/products/arranhador4.jpg",
+    "categoria": "Arranhadores Gatos",
+    "estoque": "17",
+    "pet": "Gatos"
+  },
+  {
+    "id": "22",
+    "nome": "Arranhador Torre Casa",
+    "descricao": "Arranhador com Brinquedo de alta qualidade para arranhadoress.",
+    "preco": "157.89",
+    "imagemUrl": "assets/images/products/arranhador5.jpg",
+    "categoria": "Arranhadores Gatos",
+    "estoque": "13",
+    "pet": "Gatos"
+  },
+  {
+    "id": "23",
+    "nome": "Arranhador Torre com Escorregador",
+    "descricao": "Arranhador Torre de alta qualidade para arranhadoress.",
+    "preco": "90.39",
+    "imagemUrl": "assets/images/products/arranhador6.jpg",
+    "categoria": "Arranhadores Gatos",
+    "estoque": "39",
+    "pet": "Gatos"
+  },
+  {
+    "id": "24",
+    "nome": "Arranhador Torre com Brinquedo",
+    "descricao": "Arranhador com Brinquedo de alta qualidade para arranhadoress.",
+    "preco": "52.58",
+    "imagemUrl": "assets/images/products/arranhador7.jpg",
+    "categoria": "Arranhadores Gatos",
+    "estoque": "30",
+    "pet": "Gatos"
+  },
+  {
+    "id": "25",
+    "nome": "Arranhador Bola",
+    "descricao": "Arranhador Torre de alta qualidade para arranhadoress.",
+    "preco": "113.92",
+    "imagemUrl": "assets/images/products/arranhador8.jpg",
+    "categoria": "Arranhadores Gatos",
+    "estoque": "19",
+    "pet": "Gatos"
+  },
+  {
+    "id": "26",
+    "nome": "Arranhador Torre Casa Telhado",
+    "descricao": "Arranhador Torre de alta qualidade para arranhadoress.",
+    "preco": "84.83",
+    "imagemUrl": "assets/images/products/arranhador9.jpg",
+    "categoria": "Arranhadores Gatos",
+    "estoque": "16",
+    "pet": "Gatos"
+  },
+  {
+    "id": "27",
+    "nome": "Arranhador Torre Bola",
+    "descricao": "Arranhador Compacto de alta qualidade para arranhadoress.",
+    "preco": "21.13",
+    "imagemUrl": "assets/images/products/arranhador10.jpg",
+    "categoria": "Arranhadores Gatos",
+    "estoque": "14",
+    "pet": "Gatos"
+  },
+  {
+    "id": "28",
+    "nome": "Areia Sanitária Pipicat Multicat",
+    "descricao": "Areia Biodegradável de alta qualidade para areias.",
+    "preco": "178.16",
+    "imagemUrl": "assets/images/products/areia1.jpg",
+    "categoria": "Areia Sanitária Gatos",
+    "estoque": "26",
+    "pet": "Gatos"
+  },
+  {
+    "id": "29",
+    "nome": "Areia Sanitária VivaVerde Grãos Finos",
+    "descricao": "Areia Sílica de alta qualidade para areias.",
+    "preco": "151.18",
+    "imagemUrl": "assets/images/products/areia2.jpg",
+    "categoria": "Areia Sanitária Gatos",
+    "estoque": "47",
+    "pet": "Gatos"
+  },
+  {
+    "id": "30",
+    "nome": "Areia Sanitária Pipicat Classic",
+    "descricao": "Areia Biodegradável de alta qualidade para areias.",
+    "preco": "173.82",
+    "imagemUrl": "assets/images/products/areia3.jpg",
+    "categoria": "Areia Sanitária Gatos",
+    "estoque": "15",
+    "pet": "Gatos"
+  },
+  {
+    "id": "31",
+    "nome": "Areia Sanitária VivaVerde Grãos Mistos",
+    "descricao": "Areia Biodegradável de alta qualidade para areias.",
+    "preco": "71.28",
+    "imagemUrl": "assets/images/products/areia4.jpg",
+    "categoria": "Promoção Areia Sanitária Gatos",
+    "estoque": "11",
+    "pet": "Gatos"
+  },
+  {
+    "id": "32",
+    "nome": "Areia Sanitária Gatíssimo Premium",
+    "descricao": "Areia Sílica de alta qualidade para areias.",
+    "preco": "73.37",
+    "imagemUrl": "assets/images/products/areia5.jpg",
+    "categoria": "Promoção Areia Sanitária Gatos",
+    "estoque": "9",
+    "pet": "Gatos"
+  },
+  {
+    "id": "33",
+    "nome": "Areia Sanitária KatBom Super Premium",
+    "descricao": "Areia Granulada de alta qualidade para areias.",
+    "preco": "48.67",
+    "imagemUrl": "assets/images/products/areia6.jpg",
+    "categoria": "Areia Sanitária Gatos",
+    "estoque": "29",
+    "pet": "Gatos"
+  },
+  {
+    "id": "34",
+    "nome": "Areia Sanitária Petz Grãos Finos",
+    "descricao": "Areia Biodegradável de alta qualidade para areias.",
+    "preco": "147.81",
+    "imagemUrl": "assets/images/products/areia7.jpg",
+    "categoria": "Areia Sanitária Gatos",
+    "estoque": "14",
+    "pet": "Gatos"
+  },
+  {
+    "id": "35",
+    "nome": "Areia Sanitária Pipicat Bianco Sensitive",
+    "descricao": "Areia Granulada de alta qualidade para areias.",
+    "preco": "158.94",
+    "imagemUrl": "assets/images/products/areia8.jpg",
+    "categoria": "Areia Sanitária Gatos",
+    "estoque": "7",
+    "pet": "Gatos"
+  },
+  {
+    "id": "36",
+    "nome": "Areia Sanitária Pipicat Bio Cereais",
+    "descricao": "Areia Granulada de alta qualidade para areias.",
+    "preco": "98.79",
+    "imagemUrl": "assets/images/products/areia9.jpg",
+    "categoria": "Areia Sanitária Gatos",
+    "estoque": "14",
+    "pet": "Gatos"
+  },
+  {
+    "id": "37",
+    "nome": "Areia Granulada 11",
+    "descricao": "Areia Granulada de alta qualidade para areias.",
+    "preco": "176.77",
+    "imagemUrl": "assets/images/products/areia10.jpg",
+    "categoria": "Areia Sanitária Gatos",
+    "estoque": "28",
+    "pet": "Gatos"
+  },
+  {
+    "id": "38",
+    "nome": "Brinquedo Pelúcia Capivara",
+    "descricao": "Brinquedo Pelúcia Cães.",
+    "preco": "197.03",
+    "imagemUrl": "assets/images/products/brinquedo1.jpg",
+    "categoria": "Brinquedos Cães",
+    "estoque": "15",
+    "pet": "Cães"
+  },
+  {
+    "id": "39",
+    "nome": "Brinquedo Pelúcia Peixe",
+    "descricao": "Brinquedo Pelúcia Cães.",
+    "preco": "74.39",
+    "imagemUrl": "assets/images/products/brinquedo2.jpg",
+    "categoria": "Brinquedos Cães",
+    "estoque": "40",
+    "pet": "Cães"
+  },
+  {
+    "id": "40",
+    "nome": "Mordedor de Osso com Som",
+    "descricao": "Mordedor para cães.",
+    "preco": "144.66",
+    "imagemUrl": "assets/images/products/brinquedo3.jpg",
+    "categoria": "Promoção Brinquedos Cães",
+    "estoque": "40",
+    "pet": "Cães"
+  },
+  {
+    "id": "41",
+    "nome": "Bola de Brinquedo com Alimentação",
+    "descricao": "Bola de alimentação para cães.",
+    "preco": "38.59",
+    "imagemUrl": "assets/images/products/brinquedo4.jpg",
+    "categoria": "Promoção Brinquedos Cães",
+    "estoque": "15",
+    "pet": "Cães"
+  },
+  {
+    "id": "42",
+    "nome": "Mordedor de Borracha Quebra Cabeça",
+    "descricao": "Mordedor para cães.",
+    "preco": "110.83",
+    "imagemUrl": "assets/images/products/brinquedo5.jpg",
+    "categoria": "Brinquedos Cães",
+    "estoque": "30",
+    "pet": "Cães"
+  },
+  {
+    "id": "43",
+    "nome": "Corda para Puxar",
+    "descricao": "Corda de puxar para cães.",
+    "preco": "199.25",
+    "imagemUrl": "assets/images/products/brinquedo6.jpg",
+    "categoria": "Brinquedos Cães",
+    "estoque": "34",
+    "pet": "Cães"
+  },
+  {
+    "id": "44",
+    "nome": "Corda para Puxar c/ Bolas",
+    "descricao": "Corda de puxar para cães.",
+    "preco": "65.8",
+    "imagemUrl": "assets/images/products/brinquedo7.jpg",
+    "categoria": "Brinquedos Cães",
+    "estoque": "29",
+    "pet": "Cães"
+  },
+  {
+    "id": "45",
+    "nome": "Brinquedo Pelúcia Milho",
+    "descricao": "Brinquedo Pelúcia Cães.",
+    "preco": "45.99",
+    "imagemUrl": "assets/images/products/brinquedo8.jpg",
+    "categoria": "Brinquedos Cães",
+    "estoque": "13",
+    "pet": "Cães"
+  },
+  {
+    "id": "46",
+    "nome": "Brinquedo Pelúcia Monstros",
+    "descricao": "Brinquedo Pelúcia Cães.",
+    "preco": "23.8",
+    "imagemUrl": "assets/images/products/brinquedo9.jpg",
+    "categoria": "Brinquedos Cães",
+    "estoque": "30",
+    "pet": "Cães"
+  },
+  {
+    "id": "47",
+    "nome": "Brinquedo Pelúcia ET",
+    "descricao": "Brinquedo Pelúcia Cães.",
+    "preco": "48.92",
+    "imagemUrl": "assets/images/products/brinquedo10.jpg",
+    "categoria": "Brinquedos Cães",
+    "estoque": "12",
+    "pet": "Cães"
+  },
+  {
+    "id": "48",
+    "nome": "Cama Lisa Oval Cinza",
+    "descricao": "Cama para Cães e Gatos",
+    "preco": "72.73",
+    "imagemUrl": "assets/images/products/cama1.jpg",
+    "categoria": "Camas Cães e Gatos",
+    "estoque": "20",
+    "pet": "Cães"
+  },
+  {
+    "id": "49",
+    "nome": "Cama Lisa Hexagonal Cinza",
+    "descricao": "Cama para Cães e Gatos",
+    "preco": "86.57",
+    "imagemUrl": "assets/images/products/cama2.jpg",
+    "categoria": "Camas Cães e Gatos",
+    "estoque": "38",
+    "pet": "Cães"
+  },
+  {
+    "id": "50",
+    "nome": "Cama Acolchoada Lilás",
+    "descricao": "Cama para Cães e Gatos",
+    "preco": "109.51",
+    "imagemUrl": "assets/images/products/cama3.jpg",
+    "categoria": "Camas Cães e Gatos",
+    "estoque": "42",
+    "pet": "Cães"
+  },
+  {
+    "id": "51",
+    "nome": "Cama para Janela Preta",
+    "descricao": "Cama para Cães e Gatos",
+    "preco": "53.68",
+    "imagemUrl": "assets/images/products/cama4.jpg",
+    "categoria": "Camas Cães e Gatos",
+    "estoque": "39",
+    "pet": "Cães"
+  },
+  {
+    "id": "52",
+    "nome": "Cama Caixa Cinza e Amarela",
+    "descricao": "Cama para Cães e Gatos",
+    "preco": "99.01",
+    "imagemUrl": "assets/images/products/cama5.jpg",
+    "categoria": "Camas Cães e Gatos",
+    "estoque": "20",
+    "pet": "Cães"
+  },
+  {
+    "id": "53",
+    "nome": "Cama Acolchoada Azul Marinho",
+    "descricao": "Cama para Cães e Gatos",
+    "preco": "43.52",
+    "imagemUrl": "assets/images/products/cama6.jpg",
+    "categoria": "Camas Cães e Gatos",
+    "estoque": "12",
+    "pet": "Cães"
+  },
+  {
+    "id": "54",
+    "nome": "Cama Verde Listrada",
+    "descricao": "Cama para Cães e Gatos",
+    "preco": "164.06",
+    "imagemUrl": "assets/images/products/cama7.jpg",
+    "categoria": "Camas Cães e Gatos",
+    "estoque": "13",
+    "pet": "Cães"
+  },
+  {
+    "id": "55",
+    "nome": "Cama Casinha Xadrez Verde",
+    "descricao": "Cama para Cães e Gatos",
+    "preco": "80.97",
+    "imagemUrl": "assets/images/products/cama9.jpg",
+    "categoria": "Camas Cães e Gatos",
+    "estoque": "12",
+    "pet": "Cães"
+  },
+  {
+    "id": "56",
+    "nome": "Cama Acolchoada Futton Laranja",
+    "descricao": "Cama para Cães e Gatos",
+    "preco": "66.68",
+    "imagemUrl": "assets/images/products/cama9.jpg",
+    "categoria": "Camas Cães e Gatos",
+    "estoque": "44",
+    "pet": "Cães"
+  },
+  {
+    "id": "57",
+    "nome": "Cama Casinha Rosa",
+    "descricao": "Cama para Cães e Gatos",
+    "preco": "123.01",
+    "imagemUrl": "assets/images/products/cama10.jpg",
+    "categoria": "Camas Cães e Gatos",
+    "estoque": "50",
+    "pet": "Cães"
+  },
+  {
+    "id": "58",
+    "nome": "Coleira com Peitoral Multicolorida",
+    "descricao": "Coleira para cães e gatos.",
+    "preco": "106.7",
+    "imagemUrl": "assets/images/products/coleira1.jpg",
+    "categoria": "Coleiras Cães e Gatos",
+    "estoque": "31",
+    "pet": "Cães"
+  },
+  {
+    "id": "59",
+    "nome": "Coleira Ajustável Rosa",
+    "descricao": "Coleira para cães e gatos.",
+    "preco": "63.98",
+    "imagemUrl": "assets/images/products/coleira2.jpg",
+    "categoria": "Coleiras Cães e Gatos",
+    "estoque": "16",
+    "pet": "Cães"
+  },
+  {
+    "id": "60",
+    "nome": "Coleira Ajustável Laranja",
+    "descricao": "Coleira para cães e gatos.",
+    "preco": "52.01",
+    "imagemUrl": "assets/images/products/coleira3.jpg",
+    "categoria": "Coleiras Cães e Gatos",
+    "estoque": "10",
+    "pet": "Cães"
+  },
+  {
+    "id": "61",
+    "nome": "Coleira com Peitoral Azul",
+    "descricao": "Coleira para cães e gatos.",
+    "preco": "36.87",
+    "imagemUrl": "assets/images/products/coleira4.jpg",
+    "categoria": "Coleiras Cães e Gatos",
+    "estoque": "39",
+    "pet": "Cães"
+  },
+  {
+    "id": "62",
+    "nome": "Coleira Ajustável Verde",
+    "descricao": "Coleira para cães e gatos.",
+    "preco": "40.41",
+    "imagemUrl": "assets/images/products/coleira5.jpg",
+    "categoria": "Coleiras Cães e Gatos",
+    "estoque": "5",
+    "pet": "Cães"
+  },
+  {
+    "id": "63",
+    "nome": "Coleira Longa Ajustável Roxa",
+    "descricao": "Coleira para cães e gatos.",
+    "preco": "120.16",
+    "imagemUrl": "assets/images/products/coleira6.jpg",
+    "categoria": "Coleiras Cães e Gatos",
+    "estoque": "32",
+    "pet": "Cães"
+  },
+  {
+    "id": "64",
+    "nome": "Coleira com Peitoral Pequena Multicolorida",
+    "descricao": "Coleira para cães e gatos.",
+    "preco": "148.26",
+    "imagemUrl": "assets/images/products/coleira7.jpg",
+    "categoria": "Coleiras Cães e Gatos",
+    "estoque": "25",
+    "pet": "Cães"
+  },
+  {
+    "id": "65",
+    "nome": "Coleira com Peitoral Acolchoado Multicolorida",
+    "descricao": "Coleira para cães e gatos.",
+    "preco": "33.91",
+    "imagemUrl": "assets/images/products/coleira8.jpg",
+    "categoria": "Promoção Coleiras Cães e Gatos",
+    "estoque": "8",
+    "pet": "Cães"
+  },
+  {
+    "id": "66",
+    "nome": "Coleira com Peitoral Laranja",
+    "descricao": "Coleira para cães e gatos.",
+    "preco": "16.68",
+    "imagemUrl": "assets/images/products/coleira9.jpg",
+    "categoria": "Promoção Coleiras Cães e Gatos",
+    "estoque": "43",
+    "pet": "Cães"
+  },
+  {
+    "id": "67",
+    "nome": "Coleira Zigue Zague Ajustável Azul",
+    "descricao": "Coleira para cães e gatos.",
+    "preco": "117.41",
+    "imagemUrl": "assets/images/products/coleira10.jpg",
+    "categoria": "Coleiras Cães e Gatos",
+    "estoque": "10",
+    "pet": "Cães"
+  },
+  {
+    "id": "68",
+    "nome": "Ração Nutrópica Gourmet Sementes, Frutas e Castanhas para Pássaros",
+    "descricao": "Mistura Multigrãos de alta qualidade para pássaros.",
+    "preco": "177.52",
+    "imagemUrl": "assets/images/products/racao_passaro1.jpg",
+    "categoria": "Alimentos Pássaros",
+    "estoque": "16",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "69",
+    "nome": "Ração Nutrópica Super Premium Natural",
+    "descricao": "Sementes Especiais de alta qualidade para pássaros.",
+    "preco": "181.18",
+    "imagemUrl": "assets/images/products/racao_passaro2.jpg",
+    "categoria": "Alimentos Pássaros",
+    "estoque": "29",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "70",
+    "nome": "Ração Nutrópica Super Premium Arara",
+    "descricao": "Sementes Especiais de alta qualidade para pássaros.",
+    "preco": "57.58",
+    "imagemUrl": "assets/images/products/racao_passaro3.jpg",
+    "categoria": "Alimentos Pássaros",
+    "estoque": "24",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "71",
+    "nome": "Ração Nutrópica Super Premium Beija Flor",
+    "descricao": "Sementes Especiais de alta qualidade para pássaros.",
+    "preco": "154.03",
+    "imagemUrl": "assets/images/products/racao_passaro4.jpg",
+    "categoria": "Alimentos Pássaros",
+    "estoque": "43",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "72",
+    "nome": "Ração Nutrópica Super Premium Tucano",
+    "descricao": "Mistura Multigrãos de alta qualidade para pássaros.",
+    "preco": "46.68",
+    "imagemUrl": "assets/images/products/racao_passaro5.jpg",
+    "categoria": "Alimentos Pássaros",
+    "estoque": "23",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "73",
+    "nome": "Ração Avitrin Agapornis e Calopsitas",
+    "descricao": "Sementes Especiais de alta qualidade para pássaros.",
+    "preco": "118.16",
+    "imagemUrl": "assets/images/products/racao_passaro6.jpg",
+    "categoria": "Alimentos Pássaros",
+    "estoque": "24",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "74",
+    "nome": "Ração Megazoo Light Papagaio",
+    "descricao": "Alpiste Premium de alta qualidade para pássaros.",
+    "preco": "102.27",
+    "imagemUrl": "assets/images/products/racao_passaro7.jpg",
+    "categoria": "Alimentos Pássaros",
+    "estoque": "10",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "75",
+    "nome": "Ração Megazoo Extrusada Amazonia's Fruits",
+    "descricao": "Alpiste Premium de alta qualidade para pássaros.",
+    "preco": "65.26",
+    "imagemUrl": "assets/images/products/racao_passaro8.jpg",
+    "categoria": "Alimentos Pássaros",
+    "estoque": "27",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "76",
+    "nome": "Ração Reino das Aves Gold Mix Papagaio",
+    "descricao": "Sementes Especiais de alta qualidade para pássaros.",
+    "preco": "101.24",
+    "imagemUrl": "assets/images/products/racao_passaro9.jpg",
+    "categoria": "Alimentos Pássaros",
+    "estoque": "48",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "77",
+    "nome": "Ração Reino das Aves Beija-Flor Néctar",
+    "descricao": "Mistura Multigrãos de alta qualidade para pássaros.",
+    "preco": "51.07",
+    "imagemUrl": "assets/images/products/racao_passaro10.jpg",
+    "categoria": "Alimentos Pássaros",
+    "estoque": "30",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "78",
+    "nome": "Gaiola com Base de Rodinhas Preta",
+    "descricao": "Gaiola Média de alta qualidade para gaiolass.",
+    "preco": "80.33",
+    "imagemUrl": "assets/images/products/gaiola1.jpg",
+    "categoria": "Gaiolas Pássaros",
+    "estoque": "6",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "79",
+    "nome": "Gaiola com Base de Rodinhas Preta e Madeira",
+    "descricao": "Gaiola com Poleiro de alta qualidade para gaiolass.",
+    "preco": "68.85",
+    "imagemUrl": "assets/images/products/gaiola2.jpg",
+    "categoria": "Gaiolas Pássaros",
+    "estoque": "35",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "80",
+    "nome": "Gaiola com Base de Rodinhas Branca",
+    "descricao": "Gaiola Média de alta qualidade para gaiolass.",
+    "preco": "161.94",
+    "imagemUrl": "assets/images/products/gaiola3.jpg",
+    "categoria": "Gaiolas Pássaros",
+    "estoque": "26",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "81",
+    "nome": "Gaiola Aberta com Base de Rodinhas Preta e Madeira",
+    "descricao": "Gaiola com Poleiro de alta qualidade para gaiolass.",
+    "preco": "55.92",
+    "imagemUrl": "assets/images/products/gaiola4.jpg",
+    "categoria": "Gaiolas Pássaros",
+    "estoque": "9",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "82",
+    "nome": "Gaiola Redonda Branca",
+    "descricao": "Gaiola Média de alta qualidade para gaiolass.",
+    "preco": "86.93",
+    "imagemUrl": "assets/images/products/gaiola5.jpg",
+    "categoria": "Gaiolas Pássaros",
+    "estoque": "42",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "83",
+    "nome": "Gaiola Redonda Branca e Vermelho",
+    "descricao": "Gaiola com Bebedouro de alta qualidade para gaiolass.",
+    "preco": "134.06",
+    "imagemUrl": "assets/images/products/gaiola6.jpg",
+    "categoria": "Gaiolas Pássaros",
+    "estoque": "12",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "84",
+    "nome": "Gaiola Redoma Branca",
+    "descricao": "Gaiola com Poleiro de alta qualidade para gaiolass.",
+    "preco": "18.2",
+    "imagemUrl": "assets/images/products/gaiola7.jpg",
+    "categoria": "Gaiolas Pássaros",
+    "estoque": "43",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "85",
+    "nome": "Gaiola Aberta com Base de Rodinhas Branca e Roxa",
+    "descricao": "Gaiola com Bebedouro de alta qualidade para gaiolass.",
+    "preco": "52.1",
+    "imagemUrl": "assets/images/products/gaiola8.jpg",
+    "categoria": "Gaiolas Pássaros",
+    "estoque": "34",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "86",
+    "nome": "Gaiola Quadrada Branca e Amarela",
+    "descricao": "Gaiola com Bebedouro de alta qualidade para gaiolass.",
+    "preco": "174.61",
+    "imagemUrl": "assets/images/products/gaiola9.jpg",
+    "categoria": "Gaiolas Pássaros",
+    "estoque": "15",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "87",
+    "nome": "Gaiola Aberta com Base de Rodinhas Branca e Azul",
+    "descricao": "Gaiola com Bebedouro de alta qualidade para gaiolass.",
+    "preco": "145.9",
+    "imagemUrl": "assets/images/products/gaiola10.jpg",
+    "categoria": "Gaiolas Pássaros",
+    "estoque": "34",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "88",
+    "nome": "Brinquedo para Bicar Pássaros",
+    "descricao": "Brinquedo para pássaros.",
+    "preco": "85.78",
+    "imagemUrl": "assets/images/products/brinquedo_passaro1.jpg",
+    "categoria": "Acessórios Pássaros",
+    "estoque": "43",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "89",
+    "nome": "Brinquedo Penduricalho para Gaiolas de Pássaros",
+    "descricao": "Brinquedo para pássaros.",
+    "preco": "96.83",
+    "imagemUrl": "assets/images/products/brinquedo_passaro2.jpg",
+    "categoria": "Acessórios Pássaros",
+    "estoque": "17",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "90",
+    "nome": "Brinquedo Ábaco para Bicar Pássaros",
+    "descricao": "Brinquedo para pássaros.",
+    "preco": "178.4",
+    "imagemUrl": "assets/images/products/brinquedo_passaro3.jpg",
+    "categoria": "Acessórios Pássaros",
+    "estoque": "20",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "91",
+    "nome": "Puleiro com Brinquedos para Bicar Pássaros",
+    "descricao": "Brinquedo para pássaros.",
+    "preco": "131.96",
+    "imagemUrl": "assets/images/products/brinquedo_passaro4.jpg",
+    "categoria": "Acessórios Pássaros",
+    "estoque": "15",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "92",
+    "nome": "Puleiro Arco Madeira Pássaros",
+    "descricao": "Brinquedo para pássaros.",
+    "preco": "42.79",
+    "imagemUrl": "assets/images/products/brinquedo_passaro6.jpg",
+    "categoria": "Acessórios Pássaros",
+    "estoque": "32",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "93",
+    "nome": "Puleiro Arco Madeira com Brinquedos para Bicar Pássaros",
+    "descricao": "Brinquedo para pássaros.",
+    "preco": "49.72",
+    "imagemUrl": "assets/images/products/brinquedo_passaro7.jpg",
+    "categoria": "Acessórios Pássaros",
+    "estoque": "40",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "94",
+    "nome": "Puleiro Reto Madeira com Brinquedos para Bicar Pássaros",
+    "descricao": "Brinquedo para pássaros.",
+    "preco": "82.23",
+    "imagemUrl": "assets/images/products/brinquedo_passaro8.jpg",
+    "categoria": "Acessórios Pássaros",
+    "estoque": "49",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "95",
+    "nome": "Puleiro Reto Dois Andares Madeira Natural com Brinquedos para Bicar",
+    "descricao": "Brinquedo para pássaros.",
+    "preco": "196.3",
+    "imagemUrl": "assets/images/products/brinquedo_passaro9.jpg",
+    "categoria": "Acessórios Pássaros",
+    "estoque": "35",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "96",
+    "nome": "Puleiro Reto Dois Andares Madeira Colorida com Brinquedos para Bicar",
+    "descricao": "Brinquedo para pássaros.",
+    "preco": "95.04",
+    "imagemUrl": "assets/images/products/brinquedo_passaro10.jpg",
+    "categoria": "Acessórios Pássaros",
+    "estoque": "49",
+    "pet": "Pássaros"
+  },
+  {
+    "id": "97",
+    "nome": "Alimento Alcon Neon",
+    "descricao": "Alimento de alta qualidade para peixes.",
+    "preco": "78.83",
+    "imagemUrl": "assets/images/products/racao_peixe1.jpg",
+    "categoria": "Ração Peixes",
+    "estoque": "45",
+    "pet": "Peixes"
+  },
+  {
+    "id": "98",
+    "nome": "Alimento Alcon Koï",
+    "descricao": "Alimento de alta qualidade para peixes.",
+    "preco": "72.88",
+    "imagemUrl": "assets/images/products/racao_peixe2.jpg",
+    "categoria": "Ração Peixes",
+    "estoque": "40",
+    "pet": "Peixes"
+  },
+  {
+    "id": "99",
+    "nome": "Alimento Alcon Guppy",
+    "descricao": "Alimento de alta qualidade para peixes.",
+    "preco": "164.14",
+    "imagemUrl": "assets/images/products/racao_peixe3.jpg",
+    "categoria": "Ração Peixes",
+    "estoque": "39",
+    "pet": "Peixes"
+  },
+  {
+    "id": "100",
+    "nome": "Alimento Alcon BettaMix F.D.",
+    "descricao": "Alimento de alta qualidade para peixes.",
+    "preco": "48.2",
+    "imagemUrl": "assets/images/products/racao_peixe4.jpg",
+    "categoria": "Ração Peixes",
+    "estoque": "31",
+    "pet": "Peixes"
+  },
+  {
+    "id": "101",
+    "nome": "Alimento Alcon Basic Mep 200 Complex",
+    "descricao": "Alimento de alta qualidade para peixes.",
+    "preco": "88.06",
+    "imagemUrl": "assets/images/products/racao_peixe5.jpg",
+    "categoria": "Ração Peixes",
+    "estoque": "38",
+    "pet": "Peixes"
+  },
+  {
+    "id": "102",
+    "nome": "Alimento Alcon Carnívoros Fundo",
+    "descricao": "Alimento de alta qualidade para peixes.",
+    "preco": "128.92",
+    "imagemUrl": "assets/images/products/racao_peixe6.jpg",
+    "categoria": "Ração Peixes",
+    "estoque": "44",
+    "pet": "Peixes"
+  },
+  {
+    "id": "103",
+    "nome": "Alimento Alcon Guard Herbal",
+    "descricao": "Alimento de alta qualidade para peixes.",
+    "preco": "97.92",
+    "imagemUrl": "assets/images/products/racao_peixe7.jpg",
+    "categoria": "Ração Peixes",
+    "estoque": "25",
+    "pet": "Peixes"
+  },
+  {
+    "id": "104",
+    "nome": "Alimento Alcon Shrimp Mep 200 Complex",
+    "descricao": "Alimento de alta qualidade para peixes.",
+    "preco": "97.99",
+    "imagemUrl": "assets/images/products/racao_peixe8.jpg",
+    "categoria": "Ração Peixes",
+    "estoque": "23",
+    "pet": "Peixes"
+  },
+  {
+    "id": "105",
+    "nome": "Alimento Alcon Goldfish Cresimento",
+    "descricao": "Alimento de alta qualidade para peixes.",
+    "preco": "150.48",
+    "imagemUrl": "assets/images/products/racao_peixe9.jpg",
+    "categoria": "Ração Peixes",
+    "estoque": "16",
+    "pet": "Peixes"
+  },
+  {
+    "id": "106",
+    "nome": "Alimento Alcon Spirulina",
+    "descricao": "Alimento de alta qualidade para peixes.",
+    "preco": "41.77",
+    "imagemUrl": "assets/images/products/racao_peixe10.jpg",
+    "categoria": "Ração Peixes",
+    "estoque": "30",
+    "pet": "Peixes"
+  },
+  {
+    "id": "107",
+    "nome": "Aquário 20L",
+    "descricao": "Aquário de alta qualidade para peixes.",
+    "preco": "40.28",
+    "imagemUrl": "assets/images/products/aquario1.jpg",
+    "categoria": "Aquários Peixes",
+    "estoque": "44",
+    "pet": "Peixes"
+  },
+  {
+    "id": "108",
+    "nome": "Aquário 50L",
+    "descricao": "Aquário de alta qualidade para peixes.",
+    "preco": "172.36",
+    "imagemUrl": "assets/images/products/aquario2.jpg",
+    "categoria": "Aquários Peixes",
+    "estoque": "38",
+    "pet": "Peixes"
+  },
+  {
+    "id": "109",
+    "nome": "Aquário 70L",
+    "descricao": "Aquário de alta qualidade para peixes.",
+    "preco": "122.71",
+    "imagemUrl": "assets/images/products/aquario3.jpg",
+    "categoria": "Aquários Peixes",
+    "estoque": "46",
+    "pet": "Peixes"
+  },
+  {
+    "id": "110",
+    "nome": "Aquário 100L",
+    "descricao": "Aquário de alta qualidade para peixes.",
+    "preco": "159.13",
+    "imagemUrl": "assets/images/products/aquario4.jpg",
+    "categoria": "Aquários Peixes",
+    "estoque": "34",
+    "pet": "Peixes"
+  },
+  {
+    "id": "111",
+    "nome": "Gaiola Roedores com Túnel",
+    "descricao": "Casa para roedores",
+    "preco": "25.57",
+    "imagemUrl": "assets/images/products/gaiola_roedores1.jpg",
+    "categoria": "Gaiola Roedores",
+    "estoque": "38",
+    "pet": "Outros Pets"
+  },
+  {
+    "id": "112",
+    "nome": "Gaiola Roedores Branca e Vermelha",
+    "descricao": "Casa para roedores",
+    "preco": "109.66",
+    "imagemUrl": "assets/images/products/gaiola_roedores2.jpg",
+    "categoria": "Gaiola Roedores",
+    "estoque": "34",
+    "pet": "Outros Pets"
+  },
+  {
+    "id": "113",
+    "nome": "Gaiola Roedores 3 Andares Branca e Azul",
+    "descricao": "Casa para roedores",
+    "preco": "110.9",
+    "imagemUrl": "assets/images/products/gaiola_roedores3.jpg",
+    "categoria": "Gaiola Roedores",
+    "estoque": "13",
+    "pet": "Outros Pets"
+  },
+  {
+    "id": "114",
+    "nome": "Gaiola Roedores com Toca Branca e Roxa",
+    "descricao": "Casa para roedores",
+    "preco": "85.35",
+    "imagemUrl": "assets/images/products/gaiola_roedores4.jpg",
+    "categoria": "Promoção Gaiola Roedores",
+    "estoque": "23",
+    "pet": "Outros Pets"
+  },
+  {
+    "id": "115",
+    "nome": "Gaiola Roedores com Toca Branca",
+    "descricao": "Casa para roedores",
+    "preco": "24.47",
+    "imagemUrl": "assets/images/products/gaiola_roedores5.jpg",
+    "categoria": "Gaiola Roedores",
+    "estoque": "5",
+    "pet": "Outros Pets"
+  },
+  {
+    "id": "116",
+    "nome": "Roda com Base para Roedores Azul",
+    "descricao": "Roda de Exercício de alta qualidade para roedores.",
+    "preco": "186.6",
+    "imagemUrl": "assets/images/products/roda_roedores1.jpg",
+    "categoria": "Promoção Roda Roedores",
+    "estoque": "26",
+    "pet": "Outros Pets"
+  },
+  {
+    "id": "117",
+    "nome": "Roda Fixa para Roedores Amarela",
+    "descricao": "Roda de Exercício de alta qualidade para roedores.",
+    "preco": "150.8",
+    "imagemUrl": "assets/images/products/roda_roedores2.jpg",
+    "categoria": "Roda Roedores",
+    "estoque": "20",
+    "pet": "Outros Pets"
+  },
+  {
+    "id": "118",
+    "nome": "Roda com Base para Roedores Verde",
+    "descricao": "Roda de Exercício de alta qualidade para roedores.",
+    "preco": "35.38",
+    "imagemUrl": "assets/images/products/roda_roedores3.jpg",
+    "categoria": "Roda Roedores",
+    "estoque": "24",
+    "pet": "Outros Pets"
+  },
+  {
+    "id": "119",
+    "nome": "Roda Fixa para Roedores Azul",
+    "descricao": "Roda de Exercício de alta qualidade para roedores.",
+    "preco": "116.16",
+    "imagemUrl": "assets/images/products/roda_roedores4.jpg",
+    "categoria": "Roda Roedores",
+    "estoque": "41",
+    "pet": "Outros Pets"
+  },
+  {
+    "id": "120",
+    "nome": "Roda Fixa com Base para Roedores Azul",
+    "descricao": "Roda de Exercício de alta qualidade para roedores.",
+    "preco": "43.1",
+    "imagemUrl": "assets/images/products/roda_roedores5.jpg",
+    "categoria": "Roda Roedores",
+    "estoque": "30",
+    "pet": "Outros Pets"
+  },
+  {
+    "id": "121",
+    "nome": "Repelente de Mosquitos Raid Essencial",
+    "descricao": "Repelente de insetos.",
+    "preco": "189.79",
+    "imagemUrl": "assets/images/products/repelente1.jpg",
+    "categoria": "Repelente Casa e Jardim",
+    "estoque": "35",
+    "pet": "Casa e Jardim"
+  },
+  {
+    "id": "122",
+    "nome": "Repelente Leven Óleo de Neem",
+    "descricao": "Repelente de insetos.",
+    "preco": "73.77",
+    "imagemUrl": "assets/images/products/repelente2.jpg",
+    "categoria": "Repelente Casa e Jardim",
+    "estoque": "30",
+    "pet": "Casa e Jardim"
+  },
+  {
+    "id": "123",
+    "nome": "Repelente OFF! Active",
+    "descricao": "Repelente de insetos.",
+    "preco": "165.32",
+    "imagemUrl": "assets/images/products/repelente3.jpg",
+    "categoria": "Repelente Casa e Jardim",
+    "estoque": "24",
+    "pet": "Casa e Jardim"
+  },
+  {
+    "id": "124",
+    "nome": "Repelente OFF! Family",
+    "descricao": "Repelente de insetos.",
+    "preco": "192.04",
+    "imagemUrl": "assets/images/products/repelente4.jpg",
+    "categoria": "Repelente Casa e Jardim",
+    "estoque": "20",
+    "pet": "Casa e Jardim"
+  },
+  {
+    "id": "125",
+    "nome": "Substrato BioMix Orgânico Mudas e Plantio",
+    "descricao": "Substrato para plantas natural.",
+    "preco": "97.3",
+    "imagemUrl": "assets/images/products/substrato1.jpg",
+    "categoria": "Substrato Casa e Jardim",
+    "estoque": "14",
+    "pet": "Casa e Jardim"
+  },
+  {
+    "id": "126",
+    "nome": "Substrato BioMix Corretivo Condicionador de Solo",
+    "descricao": "Substrato para plantas natural.",
+    "preco": "168.41",
+    "imagemUrl": "assets/images/products/substrato2.jpg",
+    "categoria": "Substrato Casa e Jardim",
+    "estoque": "37",
+    "pet": "Casa e Jardim"
+  },
+  {
+    "id": "127",
+    "nome": "Substrato Biomix Terra Vegetal",
+    "descricao": "Substrato para plantas natural.",
+    "preco": "143.64",
+    "imagemUrl": "assets/images/products/substrato3.jpg",
+    "categoria": "Substrato Plantas Casa e Jardim",
+    "estoque": "48",
+    "pet": "Casa e Jardim"
+  },
+  {
+    "id": "128",
+    "nome": "Vaso Plástico Autoirrigável Amarelo",
+    "descricao": "Vaso decorativo para plantas.",
+    "preco": "17.38",
+    "imagemUrl": "assets/images/products/vaso1.jpg",
+    "categoria": "Vaso Casa e Jardim",
+    "estoque": "24",
+    "pet": "Casa e Jardim"
+  },
+  {
+    "id": "129",
+    "nome": "Vaso Plástico Autoirrigável Azul",
+    "descricao": "Vaso decorativo para plantas.",
+    "preco": "182.25",
+    "imagemUrl": "assets/images/products/vaso2.jpg",
+    "categoria": "Vaso Casa e Jardim",
+    "estoque": "35",
+    "pet": "Casa e Jardim"
+  },
+  {
+    "id": "130",
+    "nome": "Vaso Plástico Autoirrigável Rosa",
+    "descricao": "Vaso decorativo para plantas.",
+    "preco": "13.35",
+    "imagemUrl": "assets/images/products/vaso3.jpg",
+    "categoria": "Promoção Vaso Casa e Jardim",
+    "estoque": "28",
+    "pet": "Casa e Jardim"
+  },
+  {
+    "id": "131",
+    "nome": "Vaso Plástico Autoirrigável Vermelho",
+    "descricao": "Vaso decorativo para plantas.",
+    "preco": "13.35",
+    "imagemUrl": "assets/images/products/vaso4.jpg",
+    "categoria": "Promoção Vaso Casa e Jardim",
+    "estoque": "28",
+    "pet": "Casa e Jardim"
+  },
+  {
+    "id": "132",
+    "nome": "Comedouro Plástico para Cães Rosa",
+    "descricao": "Comedouro para cães.",
+    "preco": "38.59",
+    "imagemUrl": "assets/images/products/comedouro1.jpg",
+    "categoria": "Comedouro Cães",
+    "estoque": "15",
+    "pet": "Cães"
+  },
+  {
+    "id": "133",
+    "nome": "Comedouro Plástico para Cães Azul",
+    "descricao": "Comedouro para cães.",
+    "preco": "38.59",
+    "imagemUrl": "assets/images/products/comedouro2.jpg",
+    "categoria": "Comedouro Cães",
+    "estoque": "15",
+    "pet": "Cães"
+  },
+  {
+    "id": "134",
+    "nome": "Comedouro Plástico para Cães Alto Bordô",
+    "descricao": "Comedouro para cães.",
+    "preco": "38.59",
+    "imagemUrl": "assets/images/products/comedouro3.jpg",
+    "categoria": "Comedouro Cães",
+    "estoque": "15",
+    "pet": "Cães"
+  },
+  {
+    "id": "135",
+    "nome": "Comedouro Plástico para Gatos Azul",
+    "descricao": "Comedouro para gatos.",
+    "preco": "38.59",
+    "imagemUrl": "assets/images/products/comedouro_gatos1.jpg",
+    "categoria": "Comedouro Gatos",
+    "estoque": "15",
+    "pet": "Gatos"
+  },
+  {
+    "id": "136",
+    "nome": "Comedouro Plástico para Gatos Rosa",
+    "descricao": "Comedouro para gatos.",
+    "preco": "38.59",
+    "imagemUrl": "assets/images/products/comedouro_gatos2.jpg",
+    "categoria": "Comedouro Gatos",
+    "estoque": "15",
+    "pet": "Gatos"
+  },
+  {
+    "id": "137",
+    "nome": "Comedouro Plástico para Gatos Alto Cinza",
+    "descricao": "Comedouro para gatos.",
+    "preco": "38.59",
+    "imagemUrl": "assets/images/products/comedouro_gatos3.jpg",
+    "categoria": "Comedouro Gatos",
+    "estoque": "15",
+    "pet": "Gatos"
+  },
+  {
+    "id": "138",
+    "nome": "Bebedouro Fonte de Plástico Vermelha",
+    "descricao": "Fonte de água para gatos.",
+    "preco": "38.59",
+    "imagemUrl": "assets/images/products/fonte1.jpg",
+    "categoria": "Fonte Gatos",
+    "estoque": "15",
+    "pet": "Gatos"
+  },
+  {
+    "id": "139",
+    "nome": "Bebedouro Fonte de Plástico Branca",
+    "descricao": "Fonte de água para gatos.",
+    "preco": "38.59",
+    "imagemUrl": "assets/images/products/fonte2.jpg",
+    "categoria": "Fonte Gatos",
+    "estoque": "15",
+    "pet": "Gatos"
+  },
+  {
+    "id": "140",
+    "nome": "Bebedouro Fonte de Plástico Azul",
+    "descricao": "Fonte de água para gatos.",
+    "preco": "38.59",
+    "imagemUrl": "assets/images/products/fonte3.jpg",
+    "categoria": "Fonte Gatos",
+    "estoque": "15",
+    "pet": "Gatos"
+  }
+]
