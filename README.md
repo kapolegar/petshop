@@ -13,27 +13,27 @@ Editor de código de sua preferência (recomendado: Visual Studio Code).
 
 ### Clone o repositório:
 
-´´´
+```
 git clone https://github.com/kapolegar/petshop.git
-´´´
+```
 
 ### Navegue até o diretório do projeto:
 
-´´´
+```
 cd petshop
-´´´
+```
 
 ### Instale as dependências:
 
-´´´
+```
 flutter pub get
-´´´
+```
 
 ### Execute o aplicativo:
 
-´´´
+```
 flutter run
-´´´
+```
 
 ## 🛠️ Estrutura do Projeto
 
